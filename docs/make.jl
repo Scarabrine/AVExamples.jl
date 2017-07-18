@@ -15,6 +15,8 @@ makedocs(modules=[RobotOS],
 deploydocs(
     deps=Deps.pip("mkdocs","python-markdown-math"),
     repo="github.com/huckl3b3rry87/RobotOSDocs.jl",
+    branch = "gh-pages",
+    latest = "master",
     target="build",
     osname="linux",
     julia="0.6",

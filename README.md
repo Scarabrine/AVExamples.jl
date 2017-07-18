@@ -16,5 +16,5 @@
 ## Installation
 
 ```julia
-julia> Pkg.clone("https://github.com/JuliaMPC/MPCDocs.jl")
+julia> Pkg.clone("https://github.com/huckl3b3rry87/RobotOSDocs.jl")
 ```
