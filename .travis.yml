@@ -1,19 +1,36 @@
 # Documentation: http://docs.travis-ci.com/user/languages/julia/
 language: julia
-sudo: required
-
-os:
-  - linux
 julia:
   - 0.6
+sudo: required
+dist: trusty
+os:
+  - linux
+before_install:
+  - sudo apt-add-repository -y "deb http://packages.ros.org/ros/ubuntu trusty main"
+  - wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
+  - sudo apt-get update
+  - sudo apt-get -y install ros-indigo-ros-base ros-indigo-common-msgs
+  - sudo rosdep init
+  - rosdep update
+before_script:
+  - export PATH=/usr/bin:$PATH
+  - source /opt/ros/indigo/setup.sh
+  - roscore &
+  - sleep 5
+  - python test/echonode.py &
+  - sleep 5
 notifications:
   email: false
-
 after_success:
-- echo $TRAVIS_JULIA_VERSION
-- if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-- julia -e 'run(`lualatex -v`)'
-- julia -e 'Pkg.clone(pwd())'
-- julia -e 'Pkg.add("RobotOS.jl")'
-- julia -e 'Pkg.add("Documenter");'
-- julia -e 'cd(Pkg.dir("RobotOSDocs"));ENV["DOCUMENTER_DEBUG"]=true; include(joinpath("docs", "make.jl"))'
+  - echo $TRAVIS_JULIA_VERSION
+  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+  - julia -e 'run(`lualatex -v`)'
+  - julia -e 'Pkg.clone(pwd())'
+  - julia -e 'Pkg.add("RobotOS.jl")'
+  - julia -e 'Pkg.add("Documenter");'
+  - julia -e 'cd(Pkg.dir("RobotOSDocs"));ENV["DOCUMENTER_DEBUG"]=true; include(joinpath("docs", "make.jl"))'
+after_script:
+  - killall roscore
+  - killall python
+  - sleep 5
