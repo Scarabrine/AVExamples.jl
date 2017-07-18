@@ -2,8 +2,8 @@ using Documenter,RobotOSDocs,RobotOS
 makedocs(modules=[RobotOS],
         doctest=false, clean=true,
         format =:html,
-        authors="Josh Langsfeld, Huckleberry Febbo",
-        sitename="RobotOS.jl",
+        authors="Huckleberry Febbo",
+        sitename="ROS, Gazebo, and julia",
         pages = Any[
         "Home" => "index.md",
         "Tutorials"=>Any[
