@@ -8,7 +8,10 @@ makedocs(modules=[RobotOS],
         "Home" => "index.md",
         "Tutorials"=>Any[
               "tutorials/Gazebo/main.md"
-               ]
+               ],
+         "Miscellaneous"=>Any[
+               "issues/index.md"
+                ]
                ]
                )
 

@@ -24,3 +24,5 @@ pages:
 - Introduction: index.md
 - Tutorial:
   - Title 1: tutorials/Gazebo/main.md
+- Potential Issues:
+  - Title 1: issues/index.md
