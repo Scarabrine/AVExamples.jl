@@ -1,4 +1,4 @@
-module RobotOSDocs
+module AVExamples
 
 # package code goes here
 

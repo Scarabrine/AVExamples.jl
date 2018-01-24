@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="frame_id" default="velodyne" />
+  <arg name="manager" default="$(arg frame_id)_nodelet_manager" />
+
+  <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+    <arg name="frame_id" value="$(arg frame_id)" />
+    <arg name="manager" value="$(arg manager)" />
+  </include>
+
+  <!-- start obstacle_detector nodelet -->
+  <include file="$(find obstacle_detector)/launch/VLP16_nodlets.launch">
+    <arg name="frame_id" value="$(arg frame_id)" />
+    <arg name="manager" value="$(arg manager)" />
+  </include>
+
+</launch>
