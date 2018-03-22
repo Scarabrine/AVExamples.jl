@@ -1,6 +1,6 @@
-site_name:           ROS, Gazebo, and julia
-repo_url:            https://github.com/huckl3b3rry87/RobotOSDocs.jl
-site_description:    This is a tutorial for using RobotOS.jl with ROS and Gazebo
+site_name:           Michigan Autonomous Vehicles (MAVs)
+repo_url:            https://github.com/JuliaMPC/AVExamples.jl
+site_description:    This is the documentation for MAVs
 site_author:         Huckleberry Febbo
 theme:               readthedocs
 
@@ -22,7 +22,3 @@ docs_dir: 'build'
 
 pages:
 - Introduction: index.md
-- Tutorial:
-  - Title 1: tutorials/Gazebo/main.md
-- Miscellaneous:
-  - Title 1: issues/index.md

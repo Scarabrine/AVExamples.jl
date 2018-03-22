@@ -3,11 +3,21 @@ makedocs(modules=[RobotOS],
         doctest=false, clean=true,
         format =:html,
         authors="Huckleberry Febbo",
-        sitename="ROS, Gazebo, and julia",
+        sitename="MAVs",
         pages = Any[
         "Home" => "index.md",
-        "Tutorials"=>Any[
-              "tutorials/Gazebo/main.md"
+        "System Demos"=>Any[
+              "demos/system/demoA.md"
+              "demos/system/demoB.md"
+              "demos/system/demoC.md"
+              "demos/system/demoD.md"
+              "demos/system/demoE.md"
+              "demos/system/demoF.md"
+               ],
+        "Package Demos"=>Any[
+             "demos/vehicle_description/demo.md"
+             "demos/nloptcontrol_planner/demo.md"
+             "demos/ros_chrono/demo.md"
                ],
          "Miscellaneous"=>Any[
                "issues/index.md"
@@ -17,7 +27,7 @@ makedocs(modules=[RobotOS],
 
 deploydocs(
     deps=Deps.pip("mkdocs","python-markdown-math"),
-    repo="github.com/huckl3b3rry87/RobotOSDocs.jl",
+    repo="github.com/JuliaMPC/AVExamples.jl",
     branch = "gh-pages",
     latest = "master",
     target="build",

@@ -1,20 +1,21 @@
-# RobotOSDocs
+# AVExamples
 
-[![Build Status](https://travis-ci.org/huckl3b3rry87/AVExamples.jl.svg?branch=master)](https://travis-ci.org/huckl3b3rry87/AVExamples.jl)
+[![Build Status](https://travis-ci.org/JuliaMPC/MPCDocs.jl.svg?branch=master)](https://travis-ci.org/JuliaMPC/AVExamples.jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliampc.github.io/AVExamples.jl/stable/)
+[![Latest](https://img.shields.io/badge/docs-latest-blue.svg)](https://juliampc.github.io/AVExamples.jl/latest/)
 
-This is a repo for my personal notes using RobotOS.jl, ROS, Gazebo, and eventually other packages. Hopefully it will be helpful for people getting stated using these tools.
- 
-
-
-## Documentation for
-
-[**STABLE**](https://huckl3b3rry87.github.io/AVExamples.jl/stable/) &mdash; **most recently tagged version of the documentation.**
-
-[**LATEST**](https://huckl3b3rry87.github.io/AVExamples.jl/latest/) &mdash; **in-development version of the documentation.**
+This repo is used for documenting the MAVs project and potentially other autonomous vehicle related projects.
 
 
-## Installation (for RobotOSDocs.jl)
+## Documentation
+
+[**STABLE**](https://juliampc.github.io/AVExamples.jl/stable/) &mdash; **most recently tagged version of the documentation.**
+
+[**LATEST**](https://juliampc.github.io/AVExamples.jl/latest/) &mdash; **in-development version of the documentation.**
+
+
+## Installation (for AVExamples.jl)
 
 ```julia
-julia> Pkg.clone("https://github.com/huckl3b3rry87/AVExamples.jl")
+julia> Pkg.clone("https://github.com/JuliaMPC/AVExamples.jl")
 ```
