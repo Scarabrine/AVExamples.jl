@@ -2,9 +2,18 @@
 
 ## Introduction
 
-This software simulates autonomous vehicles.
+This software simulates autonomous vehicles within a ROS environment.
+
 
 ## Installation
+
+### Docker
+
+### Local
+dependencies:
+```
+sudo apt-get install ros-kinetic-move-base
+```
 
 
 ## Citation
