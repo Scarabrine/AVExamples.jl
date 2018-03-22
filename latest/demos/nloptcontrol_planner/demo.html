@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>nloptcontrol_planner · MAVs</title><link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link href="../../assets/documenter.css" rel="stylesheet" type="text/css"/></head><body><nav class="toc"><h1>MAVs</h1><select id="version-selector" onChange="window.location.href=this.value" style="visibility: hidden"></select><form class="search" id="search-form" action="../../search.html"><input id="search-query" name="q" type="text" placeholder="Search docs"/></form><ul><li><a class="toctext" href="../../index.html">Home</a></li><li><span class="toctext">System Demos</span><ul><li><a class="toctext" href="../system/demoA.html">-</a></li><li><a class="toctext" href="../system/demoB.html">nloptcontrol_planner with vehicle_description</a></li><li><a class="toctext" href="../system/demoC.html">vehicle_description and ros_base_planner</a></li><li><a class="toctext" href="../system/demoD.html">-</a></li><li><a class="toctext" href="../system/demoE.html">-</a></li><li><a class="toctext" href="../system/demoF.html">obstacle_detector with vehicle_description and nloptcontrol_planner</a></li></ul></li><li><span class="toctext">Package Demos</span><ul><li><a class="toctext" href="../vehicle_description/demo.html">vehicle_description</a></li><li class="current"><a class="toctext" href="demo.html">nloptcontrol_planner</a><ul class="internal"><li><a class="toctext" href="#status-working-1">status = working</a></li><li><a class="toctext" href="#To-Run-1">To Run</a></li><li><a class="toctext" href="#Expected-Output-1">Expected Output</a></li></ul></li><li><a class="toctext" href="../ros_chrono/demo.html">ros_chrono</a></li></ul></li><li><span class="toctext">MAVs.jl</span><ul><li><a class="toctext" href="../../mavs/index.html">MAVs.jl</a></li></ul></li><li><span class="toctext">Miscellaneous</span><ul><li><a class="toctext" href="../../issues/index.html">Potential Issues</a></li></ul></li></ul></nav><article id="docs"><header><nav><ul><li>Package Demos</li><li><a href="demo.html">nloptcontrol_planner</a></li></ul><a class="edit-page" href="https://github.com/JuliaMPC/AVExamples.jl/blob/master/docs/src/demos/nloptcontrol_planner/demo.md"><span class="fa"></span> Edit on GitHub</a></nav><hr/><div id="topbar"><span>nloptcontrol_planner</span><a class="fa fa-bars" href="#"></a></div></header><h1><a class="nav-anchor" id="nloptcontrol_planner-1" href="#nloptcontrol_planner-1">nloptcontrol_planner</a></h1><p>A stand-alone demo to show that the NLOptControl.jl is solving the OCP and connected to ROS.</p><h2><a class="nav-anchor" id="status-working-1" href="#status-working-1">status = working</a></h2><h2><a class="nav-anchor" id="To-Run-1" href="#To-Run-1">To Run</a></h2><pre><code class="language-none">roslaunch nloptcontrol_planner demo.launch</code></pre><h2><a class="nav-anchor" id="Expected-Output-1" href="#Expected-Output-1">Expected Output</a></h2><p>After a few minutes the terminal should display:</p><pre><code class="language-none">******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+Running model for the: 0 time
+[199.831, 8.44829, -0.304456, 0.225719, 1.62274, 0.0524729, 16.7114, -1.11083]
+nloptcontrol_planner has been initialized.
+Running model for the: 1 time
+[198.976, 16.6123, -0.820356, 0.246638, 1.75329, 0.0330637, 16.1247, -1.22459]
+Running model for the: 2 time
+[197.441, 24.3947, -0.579523, 0.0349721, 1.8273, -0.00889783, 15.6299, -0.77718]
+Running model for the: 3 time
+[195.715, 31.9384, -0.0419052, -0.121407, 1.80044, -0.0317296, 15.3501, -0.361812]
+Running model for the: 4 time
+[194.294, 39.4512, 0.237982, -0.16141, 1.72634, -0.0360165, 15.2689, 0.0185792]
+Running model for the: 5 time
+[193.395, 47.0487, 0.302376, -0.149562, 1.64747, -0.0328082, 15.3683, 0.361693]
+Running model for the: 6 time
+[193.034, 54.7811, 0.269118, -0.117383, 1.58031, -0.0253441, 15.6244, 0.646153]
+Running model for the: 7 time
+[193.132, 62.6823, 0.204767, -0.0873723, 1.52942, -0.0189879, 16.0035, 0.854896]
+Running model for the: 8 time
+[193.601, 70.7833, 0.149901, -0.0649146, 1.49162, -0.0140566, 16.4672, 0.985584]
+Running model for the: 9 time
+[194.365, 79.1078, 0.10819, -0.0480866, 1.46356, -0.0102397, 16.9765, 1.03786]
+Running model for the: 10 time
+goal is in range
+[195.357, 87.6683, 0.0590599, -0.020078, 1.44614, -0.00305557, 17.4935, 1.02433]
+Running model for the: 11 time
+goal is in range
+[196.478, 96.4715, -0.0230271, 0.00710531, 1.44323, 0.00253812, 18.002, 1.00652]
+Running model for the: 12 time
+goal is in range
+[197.629, 105.525, -0.100926, 0.0220395, 1.45104, 0.00503927, 18.5022, 0.990981]
+Running model for the: 13 time
+goal is in range
+[198.736, 114.834, -0.150177, 0.027248, 1.46365, 0.00574419, 18.9955, 0.978923]
+Running model for the: 14 time
+goal is in range
+[199.758, 124.4, -0.175388, 0.0281426, 1.47758, 0.00578579, 19.4841, 0.974316]
+Goal Attained!
+
+[obstacle_avoidance-2] process has finished cleanly
+log file: /home/febbo/.ros/log/f7108cac-2de8-11e8-8052-104a7d04da99/obstacle_avoidance-2*.log</code></pre><footer><hr/><a class="previous" href="../vehicle_description/demo.html"><span class="direction">Previous</span><span class="title">vehicle_description</span></a><a class="next" href="../ros_chrono/demo.html"><span class="direction">Next</span><span class="title">ros_chrono</span></a></footer></article></body></html>
