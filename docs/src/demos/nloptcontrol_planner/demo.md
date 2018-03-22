@@ -1,6 +1,6 @@
-# nloptcontrol_planner
+# nloptcontrol_planner demo
 
-A stand-alone demo to show that the NLOptControl.jl is solving the OCP and connected to ROS.
+A stand-alone demo to show that the `NLOptControl.jl` is solving the OCP and connected to `ROS`.
 
 ## status = working
 
@@ -59,3 +59,10 @@ Goal Attained!
 [obstacle_avoidance-2] process has finished cleanly
 log file: /home/febbo/.ros/log/f7108cac-2de8-11e8-8052-104a7d04da99/obstacle_avoidance-2*.log
 ```
+
+This indicates a successful test.
+
+## Notes
+
+  * A large optimization problem needs to be initialized
+  * caching the functions upon start-up takes a few minutes

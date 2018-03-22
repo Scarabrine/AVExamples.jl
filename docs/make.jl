@@ -6,6 +6,13 @@ makedocs(modules=[AVExamples],
         sitename="MAVs",
         pages = Any[
         "Home" => "index.md",
+        "Packages"=>Any[
+             "packages/nloptcontrol_planner/index.md"
+             "packages/obstacle_detector/index.md"
+             "packages/vehicle_description/index.md"
+             "packages/ros_chrono/index.md"
+             "packages/mavs_ros_planner/index.md"
+                           ],
         "System Demos"=>Any[
               "demos/system/demoA.md"
               "demos/system/demoB.md"
@@ -19,9 +26,6 @@ makedocs(modules=[AVExamples],
              "demos/nloptcontrol_planner/demo.md"
              "demos/ros_chrono/demo.md"
                             ],
-        "MAVs.jl"=>Any[
-            "mavs/index.md"
-                      ],
          "Miscellaneous"=>Any[
                "issues/index.md"
                              ]

@@ -39,5 +39,3 @@ If you find [VehicleModels.jl](https://github.com/JuliaMPC/VehicleModels.jl) use
 ```
 
 ## Acknowledgements
-
-## Exported Functions

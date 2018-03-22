@@ -1,7 +1,9 @@
-# nloptcontrol_planner with vehicle_description
-A demo that shows NLOptControl.jl moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every ``0.5`` s.
+# demoB
 
-### status = needs fix
+## nloptcontrol_planner with vehicle_description
+A demo that shows NLOptControl.jl moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every `0.5` s.
+
+## status = needs fix
 I do not see the path that is being planned displayed in RViz
 
 ## To Run
@@ -10,7 +12,7 @@ roslaunch system demoB.launch
 ```
 
 ## Expected Output
-Gazebo should pop up and if you move the view so that you can see to the right ``(x,y)=(0,200)``, you will see the vehicle. All of the nodes are thin initialized and the ``nloptcontrol_planner`` node takes the longest, so for a few minutes the terminal screen will display
+Gazebo should pop up and if you move the view so that you can see to the right `(x,y)=(0,200)`, you will see the vehicle. All of the nodes are thin initialized and the `nloptcontrol_planner` node takes the longest, so for a few minutes the terminal screen will display
 ```
 waiting on obstacle_avoidance.jl in nloptcontrol_planner ...
 waiting on obstacle_avoidance.jl in nloptcontrol_planner ...

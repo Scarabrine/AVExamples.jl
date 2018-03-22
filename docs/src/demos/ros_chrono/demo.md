@@ -1,5 +1,6 @@
-# ros_chrono
-A vehicle model in Chrono that can be used through ROS.
+# ros_chrono demo
+
+A vehicle model in `Chrono` that can be used through `ROS`.
 
 ## status = ?
 
