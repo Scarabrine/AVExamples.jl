@@ -1,5 +1,5 @@
-using Documenter,RobotOSDocs,RobotOS
-makedocs(modules=[RobotOS],
+using Documenter, AVExamples
+makedocs(modules=[AVExamples],
         doctest=false, clean=true,
         format =:html,
         authors="Huckleberry Febbo",
