@@ -26,21 +26,10 @@ makedocs(modules=[AVExamples],
                 ]
                ]
                )
-
 deploydocs(
     deps=Deps.pip("mkdocs","python-markdown-math"),
-    repo="github.com/JuliaMPC/AVExamples.jl",
-    branch = "gh-pages",
-    latest = "master",
+    repo="github.com/JuliaMPC/AVExamples.jl.git",
     target="build",
     osname="linux",
     julia="0.6",
     make=nothing)
-
-    deploydocs(
-        deps=Deps.pip("mkdocs","python-markdown-math"),
-        repo="github.com/JuliaMPC/AVExamples.jl.git",
-        target="build",
-        osname="linux",
-        julia="0.6",
-        make=nothing)
