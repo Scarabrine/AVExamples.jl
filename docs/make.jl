@@ -19,6 +19,8 @@ makedocs(modules=[AVExamples],
              "demos/nloptcontrol_planner/demo.md"
              "demos/ros_chrono/demo.md"
                ],
+        "MAVs.jl"=>Any[
+            "mavs/index.md"
          "Miscellaneous"=>Any[
                "issues/index.md"
                 ]
@@ -34,3 +36,11 @@ deploydocs(
     osname="linux",
     julia="0.6",
     make=nothing)
+
+    deploydocs(
+        deps=Deps.pip("mkdocs","python-markdown-math"),
+        repo="github.com/JuliaMPC/AVExamples.jl.git",
+        target="build",
+        osname="linux",
+        julia="0.6",
+        make=nothing)
