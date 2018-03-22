@@ -13,17 +13,18 @@ makedocs(modules=[AVExamples],
               "demos/system/demoD.md"
               "demos/system/demoE.md"
               "demos/system/demoF.md"
-               ],
+                           ],
         "Package Demos"=>Any[
              "demos/vehicle_description/demo.md"
              "demos/nloptcontrol_planner/demo.md"
              "demos/ros_chrono/demo.md"
-               ],
+                            ],
         "MAVs.jl"=>Any[
             "mavs/index.md"
+                      ],
          "Miscellaneous"=>Any[
                "issues/index.md"
-                ]
+                             ]
                ]
                )
 deploydocs(
