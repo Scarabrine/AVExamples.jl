@@ -25,6 +25,7 @@ makedocs(modules=[AVExamples],
              "demos/vehicle_description/demo.md"
              "demos/nloptcontrol_planner/demo.md"
              "demos/ros_chrono/demo.md"
+             "demos/mavs_ros_planner/demo.md"
                             ],
          "Miscellaneous"=>Any[
                "issues/index.md"

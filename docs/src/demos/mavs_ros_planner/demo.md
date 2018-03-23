@@ -1,4 +1,4 @@
-# mavs_ros_planner demo
+# mavs_ros_planner
 
 ## status = ?
 

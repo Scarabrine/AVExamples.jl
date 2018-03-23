@@ -1,4 +1,4 @@
-# nloptcontrol_planner demo
+# nloptcontrol_planner
 
 A stand-alone demo to show that the `NLOptControl.jl` is solving the OCP and connected to `ROS`.
 

@@ -1,4 +1,4 @@
-# vehicle_description demo
+# vehicle_description
 
 A stand-alone demo to show that the LiDAR model in the `vehicle_description` package is working and the position of the vehicle can be modified.
 

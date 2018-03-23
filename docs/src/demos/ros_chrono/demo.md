@@ -1,4 +1,4 @@
-# ros_chrono demo
+# ros_chrono
 
 A vehicle model in `Chrono` that can be used through `ROS`.
 
