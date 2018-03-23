@@ -1,6 +1,6 @@
 # nloptcontrol_planner
 
-Obstacle avoidance algorithm described [in this paper](https://scholar.google.com/citations?user=aJBQ8dwAAAAJ&hl=en) which can now be solved in real time using an official julia package called [NLOptControl](https://github.com/JuliaMPC/NLOptControl.jl).
+Obstacle avoidance algorithm described [in this paper](https://scholar.google.com/citations?user=aJBQ8dwAAAAJ&hl=en) which can now be solved in real time using an official julia package called [NLOptControl.jl](https://github.com/JuliaMPC/NLOptControl.jl).
 
 If a vehicle needs to drive quickly and avoid moving obstacles then `NLOptControl.jl` is well suited to solve the trajectory planning problem. Where `A*` and `OpenPlanner` are path planning algorithms and are mostly concerned with satisfying kinematic/geometric constraints, they can identify a path to follow, but without a temporal component, they do not tell you how to follow the path. While, trajectory planning also considers how you can follow the path. So, for instance, what are the optimal steering and throttle trajectories (not simply what are the `X` and `Y` waypoints).
 
