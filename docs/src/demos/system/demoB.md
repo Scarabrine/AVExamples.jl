@@ -1,10 +1,10 @@
 # demoB
 
 ## nloptcontrol_planner with vehicle_description
-A demo that shows NLOptControl.jl moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every `0.5` s.
+A demo that shows `nloptcontrol_planner` moving the `vehicle_description` vehicle within Gazebo based off of the solution to the OCP every `0.5` s.
 
 ## status = needs fix
-I do not see the path that is being planned displayed in RViz
+I do not see the path that is being planned displayed in `RViz`
 
 ## To Run
 ```

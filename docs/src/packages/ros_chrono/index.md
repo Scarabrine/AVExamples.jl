@@ -1,4 +1,4 @@
-# Chrono Vehicle Model
+# ros_chrono
 A HMMWV vehicle model developed using Project `Chrono` is controlled using ROS parameters which transmit a desired path. The vehicle model
 is initialized with parameters from a config `.yaml` file, including an initial desired `xy` path. The vehicle can track to an updated path sent through the
 ROS parameter server. This is demonstrated by `traj_gen_chrono.cpp` updating the ROS parameters for the desired `x` and `y` coordinates after the vehicle begins tracking
