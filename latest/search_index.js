@@ -218,23 +218,23 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#",
-    "page": "Chrono Vehicle Model",
-    "title": "Chrono Vehicle Model",
+    "page": "ros_chrono",
+    "title": "ros_chrono",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "packages/ros_chrono/index.html#Chrono-Vehicle-Model-1",
-    "page": "Chrono Vehicle Model",
-    "title": "Chrono Vehicle Model",
+    "location": "packages/ros_chrono/index.html#ros_chrono-1",
+    "page": "ros_chrono",
+    "title": "ros_chrono",
     "category": "section",
     "text": "A HMMWV vehicle model developed using Project Chrono is controlled using ROS parameters which transmit a desired path. The vehicle model is initialized with parameters from a config .yaml file, including an initial desired xy path. The vehicle can track to an updated path sent through the ROS parameter server. This is demonstrated by traj_gen_chrono.cpp updating the ROS parameters for the desired x and y coordinates after the vehicle begins tracking the initial desired path. The vehicle\'s states are published in a ROS msg and also saved as ROS parameters."
 },
 
 {
     "location": "packages/ros_chrono/index.html#Flags-and-Settings-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Flags and Settings",
     "category": "section",
     "text": ""
@@ -242,7 +242,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Input-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Input",
     "category": "section",
     "text": ""
@@ -250,7 +250,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Output-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Output",
     "category": "section",
     "text": ""
@@ -258,7 +258,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Change-Vehicle-Initial-Conditions-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Change Vehicle Initial Conditions",
     "category": "section",
     "text": "To change initial trajectory edit the parameters in the hmmwv.yaml config file. To turn off the GUI (work in progress), change the value of system/chrono/flags/gui to false in test_chrono.yaml.$ sudo gedit ros/src/models/chrono/ros_chrono/config/hmmwv_params.yaml\n$ sudo gedit ros/src/system/config/vehicle/hmmwv.yaml\n$ sudo gedit ros/src/system/config/case1.yaml\n$ sudo gedit ros/src/system/system/test_chrono.yaml\n"
@@ -266,7 +266,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Change-Values-of-Updated-Path-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Change Values of Updated Path",
     "category": "section",
     "text": "Change the values of x2, y2 in traj_gen_chrono.cpp and recompile using catkin_make. Change the system/planner parameter to default in global.yaml."
@@ -274,7 +274,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Monitor-Vehicle-State-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Monitor Vehicle State",
     "category": "section",
     "text": "Open another terminal and type:$ rostopic echo vehicleinfo\nThis displays all states and inputs specified in the veh_status.msg file."
@@ -282,7 +282,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Current-Differences-between-3DOF-Vehicle-model-and-HMMWV-model:-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Current Differences between 3DOF Vehicle model and HMMWV model:",
     "category": "section",
     "text": ""
@@ -290,7 +290,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#HMMWV-Model-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "HMMWV Model",
     "category": "section",
     "text": "mass: 2,449.55696\nIzz: 3,570.2\nla: 1.871831 (Distance from COM to front axle)\nlb: 1.871831 (Distance from COM to rear axle)"
@@ -298,7 +298,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#DOF-Vehicle-Model-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "3DOF Vehicle Model",
     "category": "section",
     "text": "mass: 2,688.7\nIzz: 4,110.1\nla: 1.5775\nlb: 1.7245  "
@@ -306,7 +306,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Parameter-list-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Parameter list",
     "category": "section",
     "text": "/system/chrono/flags/gui (Switch to true or false)\n/case/X0/actual/ax (Initial x acceleration)\n/hmmwv_chrono/X0/theta (Initial pitch)\n/case/X0/actual/r (Initial r)\n/hmmwv_chrono/X0/theta (Initial roll)\n/case/X0/actual/sa (Initial steering angle)\n/case/X0/actual/ux (Initial x speed)\n/case/X0/actual/v (Initial velocity)\n/hmmwv_chrono/X0/v_des (Desired velocity)\n/case/X0/actual/x (Initial x)\n/case/X0/actual/yVal (Initial y)\n/case/X0/actual/psi (Initial yaw)\n/hmmwv_chrono/X0/z (Initial z)\n/vehicle/chrono/common/Izz (Moment of Inertia about z axis)\n/vehicle/chrono/common/la (Distance from COM to front axle)\n/vehicle/chrono/common/lb (Distance from COM to rear axle)\n/vehicle/chrono/common/mass (Vehicle mass)\n/vehicle/chrono/control/brk_in (Brake input)\n/vehicle/chrono/state/sa (Steering angle)\n/vehicle/chrono/control/str (Steering input)\n/vehicle/chrono/state/t (Time in chrono model)\n/vehicle/chrono/control/thr (Throttle input)\n/vehicle/chrono/state/ax (X acceleration)\n/vehicle/chrono/state/x (X position)\n/vehicle/chrono/state/ux (X speed)\n/vehicle/chrono/state/yVal (Y position)\n/vehicle/chrono/state/v (Y speed)\n/vehicle/chrono/state/psi (Yaw)\n/vehicle/chrono/state/r (Yaw rate)"
@@ -314,7 +314,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "packages/ros_chrono/index.html#Topic-list-1",
-    "page": "Chrono Vehicle Model",
+    "page": "ros_chrono",
     "title": "Topic list",
     "category": "section",
     "text": "/vehicleinfo (Vehicle states, inputs, and time)"
@@ -429,7 +429,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoB",
     "title": "nloptcontrol_planner with vehicle_description",
     "category": "section",
-    "text": "A demo that shows NLOptControl.jl moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every 0.5 s."
+    "text": "A demo that shows nloptcontrol_planner moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every 0.5 s."
 },
 
 {
