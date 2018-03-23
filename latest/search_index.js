@@ -506,23 +506,23 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/system/demoD.html#",
-    "page": "demoC",
-    "title": "demoC",
+    "page": "demoD",
+    "title": "demoD",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "demos/system/demoD.html#demoC-1",
-    "page": "demoC",
-    "title": "demoC",
+    "location": "demos/system/demoD.html#demoD-1",
+    "page": "demoD",
+    "title": "demoD",
     "category": "section",
     "text": ""
 },
 
 {
     "location": "demos/system/demoD.html#TODO-1",
-    "page": "demoC",
+    "page": "demoD",
     "title": "TODO",
     "category": "section",
     "text": "A demo that shows"
@@ -530,7 +530,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/system/demoD.html#status-?-1",
-    "page": "demoC",
+    "page": "demoD",
     "title": "status = ?",
     "category": "section",
     "text": ""
@@ -538,7 +538,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/system/demoD.html#To-Run-1",
-    "page": "demoC",
+    "page": "demoD",
     "title": "To Run",
     "category": "section",
     "text": "roslaunch system demoD.launch"
@@ -546,7 +546,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/system/demoD.html#Expected-Output-1",
-    "page": "demoC",
+    "page": "demoD",
     "title": "Expected Output",
     "category": "section",
     "text": ""
@@ -650,23 +650,23 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/vehicle_description/demo.html#",
-    "page": "vehicle_description demo",
-    "title": "vehicle_description demo",
+    "page": "vehicle_description",
+    "title": "vehicle_description",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "demos/vehicle_description/demo.html#vehicle_description-demo-1",
-    "page": "vehicle_description demo",
-    "title": "vehicle_description demo",
+    "location": "demos/vehicle_description/demo.html#vehicle_description-1",
+    "page": "vehicle_description",
+    "title": "vehicle_description",
     "category": "section",
     "text": "A stand-alone demo to show that the LiDAR model in the vehicle_description package is working and the position of the vehicle can be modified."
 },
 
 {
     "location": "demos/vehicle_description/demo.html#status-working-1",
-    "page": "vehicle_description demo",
+    "page": "vehicle_description",
     "title": "status = working",
     "category": "section",
     "text": ""
@@ -674,7 +674,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/vehicle_description/demo.html#To-Run-1",
-    "page": "vehicle_description demo",
+    "page": "vehicle_description",
     "title": "To Run",
     "category": "section",
     "text": "roslaunch vehicle_description demo.launch"
@@ -682,7 +682,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/vehicle_description/demo.html#Expected-Output-1",
-    "page": "vehicle_description demo",
+    "page": "vehicle_description",
     "title": "Expected Output",
     "category": "section",
     "text": "Gazebo should pop up and the vehicle starts to drive slowly through an obstacle field."
@@ -690,23 +690,23 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/nloptcontrol_planner/demo.html#",
-    "page": "nloptcontrol_planner demo",
-    "title": "nloptcontrol_planner demo",
+    "page": "nloptcontrol_planner",
+    "title": "nloptcontrol_planner",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "demos/nloptcontrol_planner/demo.html#nloptcontrol_planner-demo-1",
-    "page": "nloptcontrol_planner demo",
-    "title": "nloptcontrol_planner demo",
+    "location": "demos/nloptcontrol_planner/demo.html#nloptcontrol_planner-1",
+    "page": "nloptcontrol_planner",
+    "title": "nloptcontrol_planner",
     "category": "section",
     "text": "A stand-alone demo to show that the NLOptControl.jl is solving the OCP and connected to ROS."
 },
 
 {
     "location": "demos/nloptcontrol_planner/demo.html#status-working-1",
-    "page": "nloptcontrol_planner demo",
+    "page": "nloptcontrol_planner",
     "title": "status = working",
     "category": "section",
     "text": ""
@@ -714,7 +714,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/nloptcontrol_planner/demo.html#To-Run-1",
-    "page": "nloptcontrol_planner demo",
+    "page": "nloptcontrol_planner",
     "title": "To Run",
     "category": "section",
     "text": "roslaunch nloptcontrol_planner demo.launch"
@@ -722,7 +722,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/nloptcontrol_planner/demo.html#Expected-Output-1",
-    "page": "nloptcontrol_planner demo",
+    "page": "nloptcontrol_planner",
     "title": "Expected Output",
     "category": "section",
     "text": "After a few minutes the terminal should display:******************************************************************************\nThis program contains Ipopt, a library for large-scale nonlinear optimization.\n Ipopt is released as open source code under the Eclipse Public License (EPL).\n         For more information visit http://projects.coin-or.org/Ipopt\n******************************************************************************\n\nRunning model for the: 0 time\n[199.831, 8.44829, -0.304456, 0.225719, 1.62274, 0.0524729, 16.7114, -1.11083]\nnloptcontrol_planner has been initialized.\nRunning model for the: 1 time\n[198.976, 16.6123, -0.820356, 0.246638, 1.75329, 0.0330637, 16.1247, -1.22459]\nRunning model for the: 2 time\n[197.441, 24.3947, -0.579523, 0.0349721, 1.8273, -0.00889783, 15.6299, -0.77718]\nRunning model for the: 3 time\n[195.715, 31.9384, -0.0419052, -0.121407, 1.80044, -0.0317296, 15.3501, -0.361812]\nRunning model for the: 4 time\n[194.294, 39.4512, 0.237982, -0.16141, 1.72634, -0.0360165, 15.2689, 0.0185792]\nRunning model for the: 5 time\n[193.395, 47.0487, 0.302376, -0.149562, 1.64747, -0.0328082, 15.3683, 0.361693]\nRunning model for the: 6 time\n[193.034, 54.7811, 0.269118, -0.117383, 1.58031, -0.0253441, 15.6244, 0.646153]\nRunning model for the: 7 time\n[193.132, 62.6823, 0.204767, -0.0873723, 1.52942, -0.0189879, 16.0035, 0.854896]\nRunning model for the: 8 time\n[193.601, 70.7833, 0.149901, -0.0649146, 1.49162, -0.0140566, 16.4672, 0.985584]\nRunning model for the: 9 time\n[194.365, 79.1078, 0.10819, -0.0480866, 1.46356, -0.0102397, 16.9765, 1.03786]\nRunning model for the: 10 time\ngoal is in range\n[195.357, 87.6683, 0.0590599, -0.020078, 1.44614, -0.00305557, 17.4935, 1.02433]\nRunning model for the: 11 time\ngoal is in range\n[196.478, 96.4715, -0.0230271, 0.00710531, 1.44323, 0.00253812, 18.002, 1.00652]\nRunning model for the: 12 time\ngoal is in range\n[197.629, 105.525, -0.100926, 0.0220395, 1.45104, 0.00503927, 18.5022, 0.990981]\nRunning model for the: 13 time\ngoal is in range\n[198.736, 114.834, -0.150177, 0.027248, 1.46365, 0.00574419, 18.9955, 0.978923]\nRunning model for the: 14 time\ngoal is in range\n[199.758, 124.4, -0.175388, 0.0281426, 1.47758, 0.00578579, 19.4841, 0.974316]\nGoal Attained!\n\n[obstacle_avoidance-2] process has finished cleanly\nlog file: /home/febbo/.ros/log/f7108cac-2de8-11e8-8052-104a7d04da99/obstacle_avoidance-2*.logThis indicates a successful test."
@@ -730,7 +730,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/nloptcontrol_planner/demo.html#Notes-1",
-    "page": "nloptcontrol_planner demo",
+    "page": "nloptcontrol_planner",
     "title": "Notes",
     "category": "section",
     "text": "A large optimization problem needs to be initialized\ncaching the functions upon start-up takes a few minutes"
@@ -738,23 +738,23 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/ros_chrono/demo.html#",
-    "page": "ros_chrono demo",
-    "title": "ros_chrono demo",
+    "page": "ros_chrono",
+    "title": "ros_chrono",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "demos/ros_chrono/demo.html#ros_chrono-demo-1",
-    "page": "ros_chrono demo",
-    "title": "ros_chrono demo",
+    "location": "demos/ros_chrono/demo.html#ros_chrono-1",
+    "page": "ros_chrono",
+    "title": "ros_chrono",
     "category": "section",
     "text": "A vehicle model in Chrono that can be used through ROS."
 },
 
 {
     "location": "demos/ros_chrono/demo.html#status-?-1",
-    "page": "ros_chrono demo",
+    "page": "ros_chrono",
     "title": "status = ?",
     "category": "section",
     "text": ""
@@ -762,7 +762,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/ros_chrono/demo.html#To-run-1",
-    "page": "ros_chrono demo",
+    "page": "ros_chrono",
     "title": "To run",
     "category": "section",
     "text": "$ cd $HOME/MAVs/ros\n$ roslaunch ros_chrono path_follower.launch\n"
@@ -770,7 +770,47 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "demos/ros_chrono/demo.html#Expected-Output-1",
-    "page": "ros_chrono demo",
+    "page": "ros_chrono",
+    "title": "Expected Output",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "demos/mavs_ros_planner/demo.html#",
+    "page": "mavs_ros_planner",
+    "title": "mavs_ros_planner",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "demos/mavs_ros_planner/demo.html#mavs_ros_planner-1",
+    "page": "mavs_ros_planner",
+    "title": "mavs_ros_planner",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "demos/mavs_ros_planner/demo.html#status-?-1",
+    "page": "mavs_ros_planner",
+    "title": "status = ?",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "demos/mavs_ros_planner/demo.html#To-run-1",
+    "page": "mavs_ros_planner",
+    "title": "To run",
+    "category": "section",
+    "text": "Start Gazeboroslaunch mavs_gazebo demo.launchRun RViz and load the config file from MAVs/ros/src/system/config/planner/ros_base_planner/default.rviz\nSelect a 2D Pose Estimate and 2D Nav Goal in RViz. Make sure that Goal is within Global Cost map\nBase planner would create a trajectory which would be visible in RViz"
+},
+
+{
+    "location": "demos/mavs_ros_planner/demo.html#Expected-Output-1",
+    "page": "mavs_ros_planner",
     "title": "Expected Output",
     "category": "section",
     "text": ""
