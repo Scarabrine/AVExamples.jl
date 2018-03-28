@@ -161,6 +161,22 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "packages/obstacle_detector/index.html#Settings-1",
+    "page": "obstacle_detector",
+    "title": "Settings",
+    "category": "section",
+    "text": "Name Description\n/obstacle_detector/obstacle_extractor/active active/sleep mode\n/obstacle_detector/obstacle_extractor/use_scan use laser scan messages\n/obstacle_detector/obstacle_extractor/use_pcl use point cloud messages\n/obstacle_detector/obstacle_extractor/use_split_and_merge choose wether to use Iterative End Point Fit (false) or Split And Merge (true) algorithm to detect segments\n/obstacle_detector/obstacle_extractor/circles_from_visible detect circular obstacles only from fully visible (not occluded) segments\n/obstacle_detector/obstacle_extractor/discard_converted_segments do not publish segments, from which the circles were spawned\n/obstacle_detector/obstacle_extractor/min_group_points transform the coordinates of obstacles to a frame described with frame_id parameter\n/obstacle_detector/obstacle_extractor/transform_coordinates minimum number of points comprising a group to be further processed\n/obstacle_detector/obstacle_extractor/max_group_distance if the distance between two points is greater than this value, start a new group,\n/obstacle_detector/obstacle_extractor/distance_proportion enlarge the allowable distance between points proportionally to the range of point (use scan angle increment in radians)\n/obstacle_detector/obstacle_extractor/max_split_distance if a point in group lays further from a leading line than this value, split the group\n/obstacle_detector/obstacle_extractor/max_merge_separation if distance between obstacles is smaller than this value, consider merging them\n/obstacle_detector/obstacle_extractor/max_merge_spread merge two segments if all of their extreme points lay closer to the leading line than this value\n/obstacle_detector/obstacle_extractor/max_circle_radius if a circle would have greater radius than this value, skip it\n/obstacle_detector/obstacle_extractor/radius_enlargement artificially enlarge the circles radius by this value\n/obstacle_detector/obstacle_extractor/frame_id name of the coordinate frame used as origin for produced obstacles (used only if transform_coordinates flag is set to true)\n/obstacle_detector/obstacle_tracker/active active/sleep mode\n/obstacle_detector/obstacle_tracker/loop_rate the main loop rate in Hz\n/obstacle_detector/obstacle_tracker/tracking_duration the duration of obstacle tracking in the case of lack of incomming data\n/obstacle_detector/obstacle_tracker/min_correspondence_cost a threshold for correspondence test\n/obstacle_detector/obstacle_tracker/std_correspondence_dev (experimental) standard deviation of the position ellipse in the correspondence test\n/obstacle_detector/obstacle_tracker/process_variance variance of obstacles position and radius (parameter of Kalman Filter)\n/obstacle_detector/obstacle_tracker/process_rate_variance variance of rate of change of obstacles values (parameter of Kalman Filter)\n/obstacle_detector/obstacle_tracker/measurement_variance variance of measured obstacles values (parameter of Kalman Filter)\n/obstacle_detector/obstacle_tracker/frame_id name of the coordinate frame in which the obstacles are described\n/voxel_grid/filter_field_name the name of the point field to be used for filtering\n/voxel_grid/filter_limit_min The minimum limit of the filter interval\n/voxel_grid/filter_limit_max The maximum limit of the filter interval\n/voxel_grid/filter_limit_negative Inverts the meaning of the filter interval.\n/voxel_grid/leaf_size The extent of a leaf, respectively the voxel size of the result image or the size of the cells which shall accumulate points."
+},
+
+{
+    "location": "packages/obstacle_detector/index.html#Flags-1",
+    "page": "obstacle_detector",
+    "title": "Flags",
+    "category": "section",
+    "text": "Name Description\n/system/obstacle_detector/flags/running indicates whether the obstacle detector is running\n/system/obstacle_detector/flags/initilized indicates whether the obstacle detector is initialized"
+},
+
+{
     "location": "packages/obstacle_detector/index.html#Input-1",
     "page": "obstacle_detector",
     "title": "Input",
