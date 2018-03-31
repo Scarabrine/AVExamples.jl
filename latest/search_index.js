@@ -349,7 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "mavs_ros_planner",
     "category": "section",
-    "text": "This is a setup for Navigation Stack for the HMMWV model. This uses move_base ROS package and given a Start Pose and Goal pose, it publishes a trajectory into /cmd_vel.The setup uses navfn/NavfnROS as base_global_planner and base_local_planner/TrajectoryPlannerROS as base_local_planner"
+    "text": "This is a setup for Navigation Stack for the HMMWV model. This uses move_base ROS package and given a Start Pose and Goal pose, it publishes a trajectory into /cmd_vel.The setup uses navfn/NavfnROS as base_global_planner and base_local_planner/TrajectoryPlannerROS as base_local_planner Namespace for this planner is ros_base_planner"
 },
 
 {
@@ -357,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "Flags and Settings",
     "category": "section",
-    "text": ""
+    "text": "/system/ros_base_planner/initialized | indicates if the planner has finished initilization /system/ros_base_planner/goal_known | indicates wether to use the goal provided in case file or from Rviz"
 },
 
 {
@@ -365,7 +365,7 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "Input",
     "category": "section",
-    "text": ""
+    "text": "Following are the argument required by package\'s main.launch filesystem_params_path | path to cofiguration file that defines system fields. Example file: demoC.yaml case_params_path | path to cofiguration file that defines the case. Example file: case1.yaml laser_scan_topic | topic publishing the lase scan data rviz_config_file | path to a Rviz configuration filemavs_ros_planner heavily relies on the move_base framework from ROS, hence the user can also tune parameters related to cost maps, global/local planners, etc. through configuration files present in MAVs/ros/src/system/config/planner/ros_base_planner"
 },
 
 {
@@ -373,7 +373,23 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "Output",
     "category": "section",
-    "text": ""
+    "text": "Output topic are the same as mentioned in tutorial of move_base Few additional ros parameters, that are project specific are are also updated: vehicle/chrono/ros_base_planner/traj/x | vector of \'x\' part of global coordinates of created trajectory vehicle/chrono/ros_base_planner/traj/y | vector of \'y\' part of global coordinates of created trajectory"
+},
+
+{
+    "location": "packages/contact_sensor/index.html#",
+    "page": "Example use case in a .sdf file:",
+    "title": "Example use case in a .sdf file:",
+    "category": "page",
+    "text": "This package provides a library names libcontact_sensor_mavs.so which can be used in .sdf files to detect collision for the associated link.For developers that work on top of Gazebo, do # sudo apt-get install libgazebo8-devThe plugin declaration accepts an argument called \"rosParamName\". User can define the desired ros parameter to update using this.When a collision is detected, the corrosponding ros parameter is set to true. By default(when rosParamName is not specified), this plugin defaults to /vehicle_collided"
+},
+
+{
+    "location": "packages/contact_sensor/index.html#Example-use-case-in-a-.sdf-file:-1",
+    "page": "Example use case in a .sdf file:",
+    "title": "Example use case in a .sdf file:",
+    "category": "section",
+    "text": "<?xml version=\"1.0\"?> <sdf version=\"1.6\">   <world name=\"default\">     <include>       <uri>model://ground_plane</uri>     </include> <include>\n  <uri>model://sun</uri>\n</include>\n\n<model name=\"box\">\n  <link name=\"link\">\n    <pose>...</pose>\n\n    <collision name=\"box_collision\">\n      ...\n    </collision>\n\n    <visual name=\"visual\">\n      ...\n    </visual>\n\n    <sensor name=\"my_contact\" type=\"contact\">\n      <plugin name=\"contact_sensor\" filename=\"libcontact_sensor_mavs.so\">\n        <rosParamName>/vehicle_collided</rosParamName>\n      </plugin>\n      <contact>\n        <collision>box_collision</collision>\n      </contact>\n      <update_rate>5</update_rate>\n    </sensor>\n  </link>\n</model></world> </sdf>"
 },
 
 {
@@ -497,9 +513,9 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/system/demoC.html#status-needs-fix-1",
+    "location": "demos/system/demoC.html#status-working-1",
     "page": "demoC",
-    "title": "status = needs fix",
+    "title": "status = working",
     "category": "section",
     "text": "I do not see the path that is being planned displayed in RViz"
 },
@@ -517,7 +533,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoC",
     "title": "Expected Output",
     "category": "section",
-    "text": "Gazebo should pop up and if you move the view so that you can see to the right (x,y)=(0,200), you will see the vehicle. All of the nodes are thin initialized and the nloptcontrol_planner node takes the longest, so for a few minutes the terminal screen will displaywaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...Eventually, the controller will be ready and the vehicle will start to move every time a new solution is generated. This is not closed loop, it just shows the connectivity of these nodes within a system."
+    "text": "Gazebo(with the vehicle) and Rviz(showing LIDAR scan) would pop up. Case1: \'system/ros_base_planner/flags/goal_known\' in \'MAVs/ros/src/system/config/system/demoC.yaml\' is set to false. User can click on publish goal button in Rviz and select a goal point within the gloabl cost map area. The planner would plan a path from start to goal and display it. It will also update following ros parameters with trajectory data: vehicle/chrono/ros_base_planner/traj/x, vehicle/chrono/ros_base_planner/traj/y. Case2: \'system/ros_base_planner/flags/goal_known\' is set to true: Planner would pick the goal coordinates from case.yaml file and plot a trajectory on Rviz and will update the ros parameters as mentioned above. Note: goal point has to be within the global cost map for the planner to ba able to plan.After, the trajectory is published, ros parameter /system/ros_base_planner/initialized will be set to true This is not closed loop, it just shows the connectivity of these nodes within a system."
 },
 
 {
@@ -787,46 +803,6 @@ var documenterSearchIndex = {"docs": [
 {
     "location": "demos/ros_chrono/demo.html#Expected-Output-1",
     "page": "ros_chrono",
-    "title": "Expected Output",
-    "category": "section",
-    "text": ""
-},
-
-{
-    "location": "demos/mavs_ros_planner/demo.html#",
-    "page": "mavs_ros_planner",
-    "title": "mavs_ros_planner",
-    "category": "page",
-    "text": ""
-},
-
-{
-    "location": "demos/mavs_ros_planner/demo.html#mavs_ros_planner-1",
-    "page": "mavs_ros_planner",
-    "title": "mavs_ros_planner",
-    "category": "section",
-    "text": ""
-},
-
-{
-    "location": "demos/mavs_ros_planner/demo.html#status-?-1",
-    "page": "mavs_ros_planner",
-    "title": "status = ?",
-    "category": "section",
-    "text": ""
-},
-
-{
-    "location": "demos/mavs_ros_planner/demo.html#To-run-1",
-    "page": "mavs_ros_planner",
-    "title": "To run",
-    "category": "section",
-    "text": "Start Gazeboroslaunch mavs_gazebo demo.launchRun RViz and load the config file from MAVs/ros/src/system/config/planner/ros_base_planner/default.rviz\nSelect a 2D Pose Estimate and 2D Nav Goal in RViz. Make sure that Goal is within Global Cost map\nBase planner would create a trajectory which would be visible in RViz"
-},
-
-{
-    "location": "demos/mavs_ros_planner/demo.html#Expected-Output-1",
-    "page": "mavs_ros_planner",
     "title": "Expected Output",
     "category": "section",
     "text": ""
