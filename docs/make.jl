@@ -12,6 +12,7 @@ makedocs(modules=[AVExamples],
              "packages/vehicle_description/index.md"
              "packages/ros_chrono/index.md"
              "packages/mavs_ros_planner/index.md"
+             "packages/contact_sensor/index.md"
                            ],
         "System Demos"=>Any[
               "demos/system/demoA.md"
@@ -25,7 +26,6 @@ makedocs(modules=[AVExamples],
              "demos/vehicle_description/demo.md"
              "demos/nloptcontrol_planner/demo.md"
              "demos/ros_chrono/demo.md"
-             "demos/mavs_ros_planner/demo.md"
                             ],
          "Miscellaneous"=>Any[
                "issues/index.md"
