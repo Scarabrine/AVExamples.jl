@@ -349,7 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "mavs_ros_planner",
     "category": "section",
-    "text": "This is a setup for Navigation Stack for the HMMWV model. This uses move_base ROS package and given a Start Pose and Goal pose, it publishes a trajectory into /cmd_vel.The setup uses navfn/NavfnROS as base_global_planner and base_local_planner/TrajectoryPlannerROS as base_local_planner Namespace for this planner is ros_base_planner"
+    "text": "This is a setup for Navigation Stack for the HMMWV model. This uses move_base ROS package and given a Goal pose, it publishes a trajectory into /cmd_vel.The setup uses navfn/NavfnROS as base_global_planner and base_local_planner/TrajectoryPlannerROS as base_local_planner. Namespace for this planner is ros_base_planner"
 },
 
 {
@@ -357,15 +357,15 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "Flags and Settings",
     "category": "section",
-    "text": "/system/ros_base_planner/initialized | indicates if the planner has finished initilization /system/ros_base_planner/goal_known | indicates wether to use the goal provided in case file or from Rviz"
+    "text": "Name Description\n/system/ros_base_planner/initialized indicates if the planner has successfully published a global plan\n/system/ros_base_planner/goal_known indicates wether to use the goal provided in case file or from Rviz"
 },
 
 {
-    "location": "packages/mavs_ros_planner/index.html#Input-1",
+    "location": "packages/mavs_ros_planner/index.html#Inputs-1",
     "page": "mavs_ros_planner",
-    "title": "Input",
+    "title": "Inputs",
     "category": "section",
-    "text": "Following are the argument required by package\'s main.launch filesystem_params_path | path to cofiguration file that defines system fields. Example file: demoC.yaml case_params_path | path to cofiguration file that defines the case. Example file: case1.yaml laser_scan_topic | topic publishing the lase scan data rviz_config_file | path to a Rviz configuration filemavs_ros_planner heavily relies on the move_base framework from ROS, hence the user can also tune parameters related to cost maps, global/local planners, etc. through configuration files present in MAVs/ros/src/system/config/planner/ros_base_planner"
+    "text": "Following are the argument required by package\'s main.launch file of mavs_ros_palnner packageName Description\nsystem_params_path path to cofiguration file that defines system fields. Example file: demoC.yaml\ncase_params_path path to cofiguration file that defines the case. Example file: case1.yaml\nlaser_scan_topic topic publishing the lase scan data\nrviz_config_file path to a Rviz configuration filemavs_ros_planner heavily relies on the move_base framework from ROS. User can also tune parameters related to cost maps, global/local planners, etc.through configuration files present inMAVs/ros/src/system/config/planner/ros_base_planner`"
 },
 
 {
@@ -373,7 +373,7 @@ var documenterSearchIndex = {"docs": [
     "page": "mavs_ros_planner",
     "title": "Output",
     "category": "section",
-    "text": "Output topic are the same as mentioned in tutorial of move_base Few additional ros parameters, that are project specific are are also updated: vehicle/chrono/ros_base_planner/traj/x | vector of \'x\' part of global coordinates of created trajectory vehicle/chrono/ros_base_planner/traj/y | vector of \'y\' part of global coordinates of created trajectory"
+    "text": "Output topics are the same as mentioned in tutorial of move_base. Few application specific ros parameters which are publsihed are metnioned below:Name Description\nvehicle/chrono/ros_base_planner/traj/x list of \'x\' part of global coordinates for the created plan\nvehicle/chrono/ros_base_planner/traj/y list of \'y\' part of global coordinates for the created plan"
 },
 
 {
@@ -389,7 +389,31 @@ var documenterSearchIndex = {"docs": [
     "page": "contact_sensor",
     "title": "contact_sensor",
     "category": "section",
-    "text": "This package provides a library names libcontact_sensor_mavs.so which can be used in .sdf files to detect collision for the associated link.For developers that work on top of Gazebo, do # sudo apt-get install libgazebo8-devThe plugin declaration accepts an argument called \"rosParamName\". User can define the desired ros parameter to update using this.When a collision is detected, the corrosponding ros parameter is set to true. By default(when rosParamName is not specified), this plugin defaults to /vehicle_collided"
+    "text": "This package provides a Gazebo plugin: libcontact_sensor_mavs.so that can be used in .sdf files to detect collision of the associated link.For developers that work on top of Gazebo, and wish to update plugins, do: sudo apt-get install libgazebo8-dev"
+},
+
+{
+    "location": "packages/contact_sensor/index.html#Input-1",
+    "page": "contact_sensor",
+    "title": "Input",
+    "category": "section",
+    "text": "Name Description\nrosParamName Ros param that should be updated with truth values for collision detection"
+},
+
+{
+    "location": "packages/contact_sensor/index.html#Output-1",
+    "page": "contact_sensor",
+    "title": "Output",
+    "category": "section",
+    "text": "When a collision is detected, the ros parameter is set to true, it is false at the start. Once a collsion is detected, the ros parameter will always be true."
+},
+
+{
+    "location": "packages/contact_sensor/index.html#Note-1",
+    "page": "contact_sensor",
+    "title": "Note",
+    "category": "section",
+    "text": "When rosParamName is not specified, the plugin defaults to /vehicle_collided"
 },
 
 {
@@ -397,7 +421,7 @@ var documenterSearchIndex = {"docs": [
     "page": "contact_sensor",
     "title": "Example use case in a .sdf file:",
     "category": "section",
-    "text": "```<?xml version=\"1.0\"?> <sdf version=\"1.6\">   <world name=\"default\">     <include>       <uri>model://ground_plane</uri>     </include> <include>\n  <uri>model://sun</uri>\n</include>\n\n<model name=\"box\">\n  <link name=\"link\">\n    <pose>...</pose>\n\n    <collision name=\"box_collision\">\n      ...\n    </collision>\n\n    <visual name=\"visual\">\n      ...\n    </visual>\n\n    <sensor name=\"my_contact\" type=\"contact\">\n      <plugin name=\"contact_sensor\" filename=\"libcontact_sensor_mavs.so\">\n        <rosParamName>/vehicle_collided</rosParamName>\n      </plugin>\n      <contact>\n        <collision>box_collision</collision>\n      </contact>\n      <update_rate>5</update_rate>\n    </sensor>\n  </link>\n</model></world> </sdf>"
+    "text": "<?xml version=\"1.0\"?>\n<sdf version=\"1.6\">\n  <world name=\"default\">\n    <include>\n      <uri>model://ground_plane</uri>\n    </include>\n\n     <include>\n      <uri>model://sun</uri>\n    </include>\n\n    <model name=\"box\">\n      <link name=\"link\">\n        <pose>...</pose>\n\n        <collision name=\"box_collision\">\n          ...\n        </collision>\n\n        <visual name=\"visual\">\n          ...\n        </visual>\n\n        <sensor name=\"my_contact\" type=\"contact\">\n          <plugin name=\"contact_sensor\" filename=\"libcontact_sensor_mavs.so\">\n            <rosParamName>/vehicle_collided</rosParamName>\n          </plugin>\n          <contact>\n            <collision>box_collision</collision>\n          </contact>\n          <update_rate>5</update_rate>\n        </sensor>\n      </link>\n    </model>\n  </world>\n</sdf>"
 },
 
 {
@@ -525,7 +549,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoC",
     "title": "status = working",
     "category": "section",
-    "text": "I do not see the path that is being planned displayed in RViz"
+    "text": ""
 },
 
 {
@@ -541,7 +565,15 @@ var documenterSearchIndex = {"docs": [
     "page": "demoC",
     "title": "Expected Output",
     "category": "section",
-    "text": "Gazebo(with the vehicle) and Rviz(showing LIDAR scan) would pop up.Case1: \'system/ros_base_planner/flags/goal_known\' in \'MAVs/ros/src/system/config/system/demoC.yaml\' is set to false. User can click on publish goal button in Rviz and select a goal point within the gloabl cost map area. The planner would plan a path from start to goal and display it. It will also update following ros parameters with trajectory data: vehicle/chrono/ros_base_planner/traj/x, vehicle/chrono/ros_base_planner/traj/y.Case2: \'system/ros_base_planner/flags/goal_known\' is set to true: Planner would pick the goal coordinates from case.yaml file and plot a trajectory on Rviz and will update the ros parameters as mentioned above. Note: goal point has to be within the global cost map for the planner to ba able to plan.After, the trajectory is published, ros parameter /system/ros_base_planner/initialized will be set to true This is not closed loop, it just shows the connectivity of these nodes within a system."
+    "text": "Gazebo would open with the vehicle and Rviz will pop up showing LIDAR scan data.Case Description\nsystem/ros_base_planner/flags/goal_known = false User can click on publish goal button in Rviz and select a goal point within the gloabl cost map area. The planner would plan a path from start to goal and display it. It will also update following ros parameters with trajectory data: vehicle/chrono/ros_base_planner/traj/x, vehicle/chrono/ros_base_planner/traj/y.\nsystem/ros_base_planner/flags/goal_known = true Planner would pick the goal coordinates from the case file. The trajectory would be shown on Rviz and planner will update the ros parameters mentioned above.Once, the trajectory is published on Rviz, ros parameter /system/ros_base_planner/initialized will be set to true"
+},
+
+{
+    "location": "demos/system/demoC.html#Note-1",
+    "page": "demoC",
+    "title": "Note",
+    "category": "section",
+    "text": "Goal point has to be within the global cost map for the planner to ba able to plan.\nThis is not closed loop, it just shows the a functional ros planner built into the system."
 },
 
 {
@@ -561,17 +593,17 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/system/demoD.html#TODO-1",
+    "location": "demos/system/demoD.html#vehicle_description,-ros_base_planner-and-chrono-1",
     "page": "demoD",
-    "title": "TODO",
+    "title": "vehicle_description, ros_base_planner and chrono",
     "category": "section",
-    "text": "A demo that shows"
+    "text": "A demo showing a completely integrated, end-to-end setup with a moving vehicle in Gazebo/Chrono that uses a trajectory planned by ros_base_planner."
 },
 
 {
-    "location": "demos/system/demoD.html#status-?-1",
+    "location": "demos/system/demoD.html#status-working-1",
     "page": "demoD",
-    "title": "status = ?",
+    "title": "status = working",
     "category": "section",
     "text": ""
 },
@@ -589,7 +621,23 @@ var documenterSearchIndex = {"docs": [
     "page": "demoD",
     "title": "Expected Output",
     "category": "section",
-    "text": ""
+    "text": "Gazebo and Chrono would open with the vehicle and Rviz will pop up showing LIDAR scan data. Chrono simulation start takes a while.Case Description\nsystem/ros_base_planner/flags/goal_known = false User can click on publish goal button in Rviz and select a goal point within the gloabl cost map area. The planner would plan a path from start to goal and display it. The vehicle in chrono should start moving.\nsystem/ros_base_planner/flags/goal_known = true Planner would pick the goal coordinates from the case file. The trajectory would be shown on Rviz and the vehicle in Gazebo and Chrono should start moving.Once, the trajectory is published on Rviz, ros parameter /system/ros_base_planner/initialized will be set to true"
+},
+
+{
+    "location": "demos/system/demoD.html#Output-windows-1",
+    "page": "demoD",
+    "title": "Output windows",
+    "category": "section",
+    "text": "(Image: link) (Image: link) (Image: link)"
+},
+
+{
+    "location": "demos/system/demoD.html#Note-1",
+    "page": "demoD",
+    "title": "Note",
+    "category": "section",
+    "text": "Unless there is a path displayed on Rviz, Chrono will not start. Chrono waits for planner to get initialized, that means, the planner has successfully published a global plan at least once.\nPresently, at startup, Chrono vehicles spawns at z > 0, first it lands on the ground and then starts moving. This process takes a while."
 },
 
 {
