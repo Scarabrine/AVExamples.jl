@@ -1,7 +1,7 @@
 # demoF
 
-## obstacle_detector with vehicle_description and nloptcontrol_planner
-Same as `system demoB.launch` except, now obstacle_detector is used to detect the obstacle information and pass it to nloptcontrol_planner.
+## nloptcontrol_planner with vehicle_description and chrono
+A demo that shows `nloptcontrol_planner` moving the `vehicle_description` vehicle within Gazebo based off of the solution to the OCP every `0.5` s. Chrono takes the trajectory and follow the path/ trajectory, and feedback the states to `vehicle_description`. Now the loop is closed.
 
 ## status = working
 
@@ -11,4 +11,6 @@ roslaunch system demoF.launch
 ```
 
 ## Expected Output
-The only difference between this and `system demoB.launch` is that now an `Rviz` Display pops up and shows that the obstacle is being detected.
+Chrono will pop up when `nloptcontrol_planner` is initialized. The hmmwv and path will display.
+The command line output of demoF is similar to demoE, since the ros time is slowed down to chrono time, the planner will be ran for more times.  
+Display in Gazebo and Chrono are mirrored in y axis since Gazebo is right-handed and Irrlicht (Chrono gui app) is left-handed.
