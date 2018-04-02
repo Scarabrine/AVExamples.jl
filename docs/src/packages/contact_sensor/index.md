@@ -1,3 +1,4 @@
+# contact_sensor
 This package provides a library names libcontact_sensor_mavs.so which can be
 used in .sdf files to detect collision for the associated link.
 
@@ -10,9 +11,9 @@ When a collision is detected, the corrosponding ros parameter is set to true.
 By default(when rosParamName is not specified), this plugin defaults to
 /vehicle_collided
 
-# Example use case in a .sdf file:
+## Example use case in a .sdf file:
 
-<?xml version="1.0"?>
+```<?xml version="1.0"?>
 <sdf version="1.6">
   <world name="default">
     <include>
