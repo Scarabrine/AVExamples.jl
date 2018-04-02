@@ -421,15 +421,15 @@ var documenterSearchIndex = {"docs": [
     "page": "demoA",
     "title": "obstacle_detector with vehicle_description",
     "category": "section",
-    "text": "obstacle_detector with vehicle_description @tqshao can you please fix this?"
+    "text": "A demo which shows the obstacle_detector with vehicle_description."
 },
 
 {
-    "location": "demos/system/demoA.html#status-broken-1",
+    "location": "demos/system/demoA.html#status-working-1",
     "page": "demoA",
-    "title": "status = broken",
+    "title": "status = working",
     "category": "section",
-    "text": "[ INFO] [1521730529.026696899, 0.483000000]: \"map\" passed to lookupTransform argument target_frame does not exist.\n[INFO] [1521730529.071362, 0.508000]: Spawn status: SpawnModel: Successfully spawned entity\n[Obstacle2/spawn_obstacles-6] process has finished cleanly\nlog file: /home/febbo/.ros/log/0717f39a-2de1-11e8-8052-104a7d04da99/Obstacle2-spawn_obstacles-6*.log\n[ INFO] [1521730529.252805167, 0.599000000]: \"map\" passed to lookupTransform argument target_frame does not exist.\n[Obstacle1/spawn_obstacles-5] process has finished cleanly\nlog file: /home/febbo/.ros/log/0717f39a-2de1-11e8-8052-104a7d04da99/Obstacle1-spawn_obstacles-5*.log\n[ INFO] [1521730529.431333339, 0.704000000]: \"map\" passed to lookupTransform argument target_frame does not exist."
+    "text": ""
 },
 
 {
@@ -445,7 +445,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoA",
     "title": "Expected Output",
     "category": "section",
-    "text": ""
+    "text": "Gazebo should pop up, and the vehicle is located at the origin and heading towards y axis. There should be three cylinder obstacles ahead of the vehicle. Rviz should display the pointcloud in blue and the fitted circular obstacles."
 },
 
 {
@@ -473,11 +473,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/system/demoB.html#status-needs-fix-1",
+    "location": "demos/system/demoB.html#status-working-1",
     "page": "demoB",
-    "title": "status = needs fix",
+    "title": "status = working",
     "category": "section",
-    "text": "I do not see the path that is being planned displayed in RViz"
+    "text": ""
 },
 
 {
@@ -493,7 +493,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoB",
     "title": "Expected Output",
     "category": "section",
-    "text": "Gazebo should pop up and if you move the view so that you can see to the right (x,y)=(0,200), you will see the vehicle. All of the nodes are thin initialized and the nloptcontrol_planner node takes the longest, so for a few minutes the terminal screen will displaywaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...Eventually, the controller will be ready and the vehicle will start to move every time a new solution is generated. This is not closed loop, it just shows the connectivity of these nodes within a system."
+    "text": "Gazebo should pop up and if you move the view so that you can see to the right (x,y)=(0,200), you will see the vehicle. All of the nodes are thin initialized and the nloptcontrol_planner node takes the longest, so for a few minutes the terminal screen will displaywaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\n......\nRunning model for the: 1 time\n[bootstrap-12] process has finished cleanly\nlog file: /home/tq/.ros/log/60726692-353d-11e8-8a62-b06ebf2c81c1/bootstrap-12*.log\nRunning model for the: 2 time\nRunning model for the: 3 time\nRunning model for the: 4 time\nRunning model for the: 5 time\nRunning model for the: 6 time\nRunning model for the: 7 time\nRunning model for the: 8 time\nRunning model for the: 9 time\nRunning model for the: 10 time\ngoal is in range\nRunning model for the: 11 time\ngoal is in range\nRunning model for the: 12 time\ngoal is in range\nRunning model for the: 13 time\ngoal is in range\nRunning model for the: 14 time\ngoal is in range\nGoal Attained!\n\n[obstacle_avoidance-2] process has finished cleanly\nlog file: /home/tq/.ros/log/60726692-353d-11e8-8a62-b06ebf2c81c1/obstacle_avoidance-2*.logA green path planned by nloptcontrol_planner will be displayed in rviz. Eventually, the controller will be ready and the vehicle will start to move every time a new solution is generated. This is not closed loop, it just shows the connectivity of these nodes within a system."
 },
 
 {
@@ -609,17 +609,17 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/system/demoE.html#TODO-1",
+    "location": "demos/system/demoE.html#obstacle-detector-with-nloptcontrol_planner-and-vehicle_description-1",
     "page": "demoE",
-    "title": "TODO",
+    "title": "obstacle detector with nloptcontrol_planner and vehicle_description",
     "category": "section",
-    "text": "A demo that shows"
+    "text": "Same as system demoB.launch except, known_environment is set to false, obstacle_detector is used to detect the obstacle information and pass it to nloptcontrol_planner."
 },
 
 {
-    "location": "demos/system/demoE.html#status-?-1",
+    "location": "demos/system/demoE.html#status-working-1",
     "page": "demoE",
-    "title": "status = ?",
+    "title": "status = working",
     "category": "section",
     "text": ""
 },
@@ -637,7 +637,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoE",
     "title": "Expected Output",
     "category": "section",
-    "text": ""
+    "text": "Gazebo should pop up and if you move the view so that you can see to the right (x,y)=(0,200), you will see the vehicle. All of the nodes are thin initialized and the nloptcontrol_planner node takes the longest, so for a few minutes the terminal screen will displaywaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\nwaiting on obstacle_avoidance.jl in nloptcontrol_planner ...\n......\nRunning model for the: 1 time\n[bootstrap-12] process has finished cleanly\nlog file: /home/tq/.ros/log/60726692-353d-11e8-8a62-b06ebf2c81c1/bootstrap-12*.log\nRunning model for the: 2 time\nRunning model for the: 3 time\nRunning model for the: 4 time\nRunning model for the: 5 time\nRunning model for the: 6 time\nRunning model for the: 7 time\nRunning model for the: 8 time\nRunning model for the: 9 time\nRunning model for the: 10 time\ngoal is in range\nRunning model for the: 11 time\ngoal is in range\nRunning model for the: 12 time\ngoal is in range\nRunning model for the: 13 time\ngoal is in range\nRunning model for the: 14 time\ngoal is in range\nGoal Attained!\n\n[obstacle_avoidance-2] process has finished cleanly\nlog file: /home/tq/.ros/log/60726692-353d-11e8-8a62-b06ebf2c81c1/obstacle_avoidance-2*.logA green path planned by nloptcontrol_planner will be displayed in rviz. Eventually, the controller will be ready and the vehicle will start to move every time a new solution is generated. This is not closed loop, it just shows the connectivity of these nodes within a system."
 },
 
 {
@@ -657,11 +657,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/system/demoF.html#obstacle_detector-with-vehicle_description-and-nloptcontrol_planner-1",
+    "location": "demos/system/demoF.html#nloptcontrol_planner-with-vehicle_description-and-chrono-1",
     "page": "demoF",
-    "title": "obstacle_detector with vehicle_description and nloptcontrol_planner",
+    "title": "nloptcontrol_planner with vehicle_description and chrono",
     "category": "section",
-    "text": "Same as system demoB.launch except, now obstacle_detector is used to detect the obstacle information and pass it to nloptcontrol_planner."
+    "text": "A demo that shows nloptcontrol_planner moving the vehicle_description vehicle within Gazebo based off of the solution to the OCP every 0.5 s. Chrono takes the trajectory and follow the path/ trajectory, and feedback the states to vehicle_description. Now the loop is closed."
 },
 
 {
@@ -685,7 +685,7 @@ var documenterSearchIndex = {"docs": [
     "page": "demoF",
     "title": "Expected Output",
     "category": "section",
-    "text": "The only difference between this and system demoB.launch is that now an Rviz Display pops up and shows that the obstacle is being detected."
+    "text": "Chrono will pop up when nloptcontrol_planner is initialized. The hmmwv and path will display. The command line output of demoF is similar to demoE, since the ros time is slowed down to chrono time, the planner will be ran for more times.   Display in Gazebo and Chrono are mirrored in y axis since Gazebo is right-handed and Irrlicht (Chrono gui app) is left-handed."
 },
 
 {
