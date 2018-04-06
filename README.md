@@ -1,6 +1,6 @@
 # AVExamples
 
-[![Build Status](https://travis-ci.org/JuliaMPC/MPCDocs.jl.svg?branch=master)](https://travis-ci.org/JuliaMPC/AVExamples.jl)
+[![Build Status](https://travis-ci.org/JuliaMPC/AVExamples.jl.svg?branch=master)](https://travis-ci.org/JuliaMPC/AVExamples.jl)
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliampc.github.io/AVExamples.jl/stable/)
 [![Latest](https://img.shields.io/badge/docs-latest-blue.svg)](https://juliampc.github.io/AVExamples.jl/latest/)
 
