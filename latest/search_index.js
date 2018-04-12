@@ -245,7 +245,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "ros_chrono",
     "category": "section",
-    "text": "A HMMWV vehicle model developed using Project Chrono is controlled using ROS parameters which transmit a desired path. The vehicle model is initialized with parameters from a config .yaml file, including an initial desired xy path. The vehicle can track to an updated path sent through the ROS parameter server. This is demonstrated by traj_gen_chrono.cpp updating the ROS parameters for the desired x and y coordinates after the vehicle begins tracking the initial desired path. The vehicle\'s states are published in a ROS msg and also saved as ROS parameters."
+    "text": "A HMMWV vehicle model developed in Project Chrono is controlled using ROS parameters which transmit a desired path. The vehicle model is initialized with parameters from a config yaml file, including an initial desired xy path. The vehicle can track to specified path using a fixed target speed PID controller and a steering PID controller. The vehicle\'s states are published in a ROS msg and also saved as ROS parameters."
 },
 
 {
@@ -257,11 +257,35 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "packages/ros_chrono/index.html#Settings-1",
+    "page": "ros_chrono",
+    "title": "Settings",
+    "category": "section",
+    "text": "Name Description\nsystem/chrono/flags/gui Disable/Enable Chrono GUI"
+},
+
+{
+    "location": "packages/ros_chrono/index.html#Flags-1",
+    "page": "ros_chrono",
+    "title": "Flags",
+    "category": "section",
+    "text": "Name Description\nsystem/chrono/flags/initialized Chrono ROS node is initialized\nsystem/chrono/flags/running Chrono simulation is running"
+},
+
+{
     "location": "packages/ros_chrono/index.html#Input-1",
     "page": "ros_chrono",
     "title": "Input",
     "category": "section",
     "text": ""
+},
+
+{
+    "location": "packages/ros_chrono/index.html#Trajectories-1",
+    "page": "ros_chrono",
+    "title": "Trajectories",
+    "category": "section",
+    "text": "These x-y trajectories obtained from external planners are used to generate a path for the Chrono vehicle to follow. For the standalone path follower demo, planner_namespace = default.Name Description\nsystem/planner/ planner namespace specifying source of target x-y trajectories\n/state/chrono/planner_namespace/traj/x global x position trajectory (m)\n/state/chrono/planner_namespace/traj/yVal global y position trajectory (m)"
 },
 
 {
@@ -273,11 +297,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "packages/ros_chrono/index.html#Vehicle-State-1",
+    "page": "ros_chrono",
+    "title": "Vehicle State",
+    "category": "section",
+    "text": "If an actual vehicle is used or an external model of the vehicle is used, /nloptcontrol_planner/flags/3DOF_plant should be set to false. And the following rosparam states (points) should be set:Name Description\n/state/chrono/t simulation time (s)\n/state/chrono/x global x position (m)\n/state/chrono/yVal global y position (m)\n/state/chrono/psi global heading angle (rad)\n/state/chrono/theta global pitch angle (rad)\n/state/chrono/phi global roll angle (rad)\n/state/chrono/ux velocity in the x direction (vehicle frame) in (m/s)\n/state/chrono/v velocity in the y direction (vehicle frame) in (m/s)\n/state/chrono/ax acceleration in the x direction (vehicle frame) in (m/s^s)\n/state/chrono/r yaw rate about the z direction in (rad/s)\n/state/chrono/sa steering angle at the tire (rad)\n/state/chrono/control/thr Throttle control input mapped from [0 1]\n/state/chrono/control/brk Braking control input mapped from [0 1]\n/state/chrono/control/str Steering control input mapped from [-1 1]To view states updating while Chrono is running, open another terminal and type:$ rostopic echo vehicleinfo\nThis displays all states and inputs specified in the veh_status.msg file."
+},
+
+{
     "location": "packages/ros_chrono/index.html#Change-Vehicle-Initial-Conditions-1",
     "page": "ros_chrono",
     "title": "Change Vehicle Initial Conditions",
     "category": "section",
-    "text": "To change initial trajectory edit the parameters in the hmmwv.yaml config file. To turn off the GUI (work in progress), change the value of system/chrono/flags/gui to false in test_chrono.yaml.$ sudo gedit ros/src/models/chrono/ros_chrono/config/hmmwv_params.yaml\n$ sudo gedit ros/src/system/config/vehicle/hmmwv.yaml\n$ sudo gedit ros/src/system/config/case1.yaml\n$ sudo gedit ros/src/system/system/test_chrono.yaml\n"
+    "text": "To change initial trajectory edit the parameters in the hmmwv_chrono_params.yaml config file.$ sudo gedit ros/src/system/config/s1.yaml\nTo change target speed, edit:$ sudo gedit ros/src/models/chrono/ros_chrono/config/hmmwv_params.yaml"
 },
 
 {
@@ -285,15 +317,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "Change Values of Updated Path",
     "category": "section",
-    "text": "Change the values of x2, y2 in traj_gen_chrono.cpp and recompile using catkin_make. Change the system/planner parameter to default in global.yaml."
-},
-
-{
-    "location": "packages/ros_chrono/index.html#Monitor-Vehicle-State-1",
-    "page": "ros_chrono",
-    "title": "Monitor Vehicle State",
-    "category": "section",
-    "text": "Open another terminal and type:$ rostopic echo vehicleinfo\nThis displays all states and inputs specified in the veh_status.msg file."
+    "text": "For the path_follower demo, update the parameters of /state/chrono/default/traj/yVal, /state/chrono/default/traj/x in hmmwv_chrono_params.yaml. Change the system/planner parameter to chrono in chrono.yaml. In general, set system/planner to desired planner and update state/chrono/ <planner_name> /traj/x, vehicle/chrono/ <planner_name> /traj/yVal."
 },
 
 {
@@ -301,23 +325,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "Current Differences between 3DOF Vehicle model and HMMWV model:",
     "category": "section",
-    "text": ""
-},
-
-{
-    "location": "packages/ros_chrono/index.html#HMMWV-Model-1",
-    "page": "ros_chrono",
-    "title": "HMMWV Model",
-    "category": "section",
-    "text": "mass: 2,449.55696\nIzz: 3,570.2\nla: 1.871831 (Distance from COM to front axle)\nlb: 1.871831 (Distance from COM to rear axle)"
-},
-
-{
-    "location": "packages/ros_chrono/index.html#DOF-Vehicle-Model-1",
-    "page": "ros_chrono",
-    "title": "3DOF Vehicle Model",
-    "category": "section",
-    "text": "mass: 2,688.7\nIzz: 4,110.1\nla: 1.5775\nlb: 1.7245  "
+    "text": "Name 3DOF Chrono Description\nIzz 4,110.1 3,570.2 Inertia about z axis\nla 1.5775 1.871831 Distance from COM to front axle\nlb 1.7245 1.871831 Distance from COM to rear axle\nTire Model PACEJKA RIGID Tire model used by vehicle"
 },
 
 {
@@ -325,7 +333,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "Parameter list",
     "category": "section",
-    "text": "/system/chrono/flags/gui (Switch to true or false)\n/case/X0/actual/ax (Initial x acceleration)\n/hmmwv_chrono/X0/theta (Initial pitch)\n/case/X0/actual/r (Initial r)\n/hmmwv_chrono/X0/theta (Initial roll)\n/case/X0/actual/sa (Initial steering angle)\n/case/X0/actual/ux (Initial x speed)\n/case/X0/actual/v (Initial velocity)\n/hmmwv_chrono/X0/v_des (Desired velocity)\n/case/X0/actual/x (Initial x)\n/case/X0/actual/yVal (Initial y)\n/case/X0/actual/psi (Initial yaw)\n/hmmwv_chrono/X0/z (Initial z)\n/vehicle/chrono/common/Izz (Moment of Inertia about z axis)\n/vehicle/chrono/common/la (Distance from COM to front axle)\n/vehicle/chrono/common/lb (Distance from COM to rear axle)\n/vehicle/chrono/common/mass (Vehicle mass)\n/vehicle/chrono/control/brk_in (Brake input)\n/vehicle/chrono/state/sa (Steering angle)\n/vehicle/chrono/control/str (Steering input)\n/vehicle/chrono/state/t (Time in chrono model)\n/vehicle/chrono/control/thr (Throttle input)\n/vehicle/chrono/state/ax (X acceleration)\n/vehicle/chrono/state/x (X position)\n/vehicle/chrono/state/ux (X speed)\n/vehicle/chrono/state/yVal (Y position)\n/vehicle/chrono/state/v (Y speed)\n/vehicle/chrono/state/psi (Yaw)\n/vehicle/chrono/state/r (Yaw rate)"
+    "text": "The following parameters with SI units and angles in radians can be modified:Name Description\n/case/X0/actual/ax Initial x acceleration\n/state/chrono/X0/theta Initial pitch\n/case/X0/actual/r Initial yaw rate\n/state/chrono/X0/phi Initial roll\n/case/X0/actual/sa Initial steering angle\n/case/X0/actual/ux Initial x speed\n/case/X0/actual/v Initial velocity\n/state/chrono/X0/v_des Desired velocity\n/case/X0/actual/x Initial x\n/case/X0/actual/yVal Initial y\n/case/X0/actual/psi Initial yaw\n/state/chrono/X0/z Initial z\nvehicle/common/Izz (Moment of Inertia about z axis)\nvehicle/common/la Distance from COM to front axle\n/vehicle/common/lb Distance from COM to rear axle\n/vehicle/common/m Vehicle mass\n/vehicle/common/wheel_radius Wheel radius\n/vehicle/chrono/vehicle_params/frict_coeff Friction Coefficient (Rigid Tire Model)\n/vehicle/chrono/vehicle_params/rest_coeff Restitution Coefficient (Rigid Tire Model)\n/vehicle/chrono/vehicle_params/centroidLoc Chassis centroid location\n/vehicle/chrono/vehicle_params/centroidOrientation Chassis centroid orientation\n/vehicle/chrono/vehicle_params/chassisMass Chassis mass\n/vehicle/chrono/vehicle_params/chassisInertia Chassis inertia\n/vehicle/chrono/vehicle_params/driverLoc Driver location\n/vehicle/chrono/vehicle_params/driverOrientation Driver orientation\n/vehicle/chrono/vehicle_params/motorBlockDirection Motor block direction\n/vehicle/chrono/vehicle_params/axleDirection Axle direction vector\n/vehicle/chrono/vehicle_params/driveshaftInertia Final driveshaft inertia\n/vehicle/chrono/vehicle_params/differentialBoxInertia Differential box inertia\n/vehicle/chrono/vehicle_params/conicalGearRatio Conical gear ratio for steering\n/vehicle/chrono/vehicle_params/differentialRatio Differential ratio\n/vehicle/chrono/vehicle_params/gearRatios Gear ratios (indexed starting from reverse gear ratio and ending at final forward gear ratio)\n/vehicle/chrono/vehicle_params/steeringLinkMass Steering link mass\n/vehicle/chrono/vehicle_params/steeringLinkInertia Steering link inertia\n/vehicle/chrono/vehicle_params/steeringLinkRadius Steering link radius\n/vehicle/chrono/vehicle_params/steeringLinkLength Steering link length\n/vehicle/chrono/vehicle_params/pinionRadius Pinion radius\n/vehicle/chrono/vehicle_params/pinionMaxAngle Pinion max steering angle\n/vehicle/chrono/vehicle_params/maxBrakeTorque Max brake torque"
 },
 
 {
@@ -333,7 +341,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "Topic list",
     "category": "section",
-    "text": "/vehicleinfo (Vehicle states, inputs, and time)"
+    "text": "Name Description\n/vehicleinfo Vehicle states, inputs, and time"
 },
 
 {
@@ -841,11 +849,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "demos/ros_chrono/demo.html#status-?-1",
+    "location": "demos/ros_chrono/demo.html#Status-working-1",
     "page": "ros_chrono",
-    "title": "status = ?",
+    "title": "Status == working",
     "category": "section",
-    "text": ""
+    "text": "The vehicle model currently runs with rigid tire models, a rear-wheel driveline, double wishbone suspension (reduced so that the control arm positions are distance constraints), and rack and pinion steering."
 },
 
 {
@@ -853,7 +861,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "To run",
     "category": "section",
-    "text": "$ cd $HOME/MAVs/ros\n$ roslaunch ros_chrono path_follower.launch\n"
+    "text": "$ cd $HOME/MAVs/ros\n$ roslaunch ros_chrono demo.launch\n$ rosparam set system/default/flags/initialized true"
 },
 
 {
@@ -861,7 +869,7 @@ var documenterSearchIndex = {"docs": [
     "page": "ros_chrono",
     "title": "Expected Output",
     "category": "section",
-    "text": ""
+    "text": "(Image: link)"
 },
 
 {
