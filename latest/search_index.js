@@ -433,6 +433,62 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "packages/system/system_shutdown/index.html#",
+    "page": "system/system_shutdown",
+    "title": "system/system_shutdown",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#system/system_shutdown-1",
+    "page": "system/system_shutdown",
+    "title": "system/system_shutdown",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#System-shutdown-handler-1",
+    "page": "system/system_shutdown",
+    "title": "System shutdown handler",
+    "category": "section",
+    "text": "This is a node in system package that handles system shutdown based on ros parameters"
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#Flags-and-Settings-1",
+    "page": "system/system_shutdown",
+    "title": "Flags and Settings",
+    "category": "section",
+    "text": "Name Description\n/system/shutdown/flags/running Shutdown node has been started. Example file: demoD.yaml\n/system/shutdown/flags/initialized Shutdown node has been initialized. Example file: demoD.yaml"
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#Inputs-1",
+    "page": "system/system_shutdown",
+    "title": "Inputs",
+    "category": "section",
+    "text": "Following are the argument required by the nodeName Description\n/system/shutdown/params/shutdown_initiation_flags List of parameters that are constantly monitored for their truth values. If any of these becomes true, system shutdown would be initiated. Example file: demoD.yaml\n/system/shutdown/params/shutdown_completion_flags List of parameters which inidicate pre-processing required for a safe shutdown. Only when all the parameters become true, ros system would be shutdown. Example file: demoD.yaml"
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#Output-1",
+    "page": "system/system_shutdown",
+    "title": "Output",
+    "category": "section",
+    "text": "If any of the shutdown_initiation_flags becomes true, then a shutdown routine will be initiated. The node would then wait for all shutdown_completion_flags to become true. Once it is achieved, this node would shutdown. Since system_shutdown is always added as a required node in a launch file, the ros system would kill all remaining nodes which were spawned through this launch file."
+},
+
+{
+    "location": "packages/system/system_shutdown/index.html#Example-use-case-1",
+    "page": "system/system_shutdown",
+    "title": "Example use case",
+    "category": "section",
+    "text": "Put following code in launch file:<?xml version=\"1.0\"?>\n<launch>\n  <arg name=\"system_params_path\" default=\"$(find system)/config/system/demos/demoD.yaml\"/>\n\n  <!-- Add your nodes -->\n\n  <node name=\"system_shutdown\" pkg=\"system\" type=\"system_shutdown\" output=\"screen\" required=\"true\">\n     <rosparam file=\"$(arg system_params_path)\" command=\"load\"/>\n  </node>\n\n  <node name=\"bootstrap\" pkg=\"system\" type=\"bootstrap.jl\" output=\"screen\"/>\n\n</launch>Put following code in your system.yaml. Note: Do not use this directly, this is just an example and shows only relevant components for shutdon node.system:\n flags:\n  override_shutdown_hook: false\n  data_logging_completed: true\n\n shutdown:\n  flags:\n   running: true\n   initialized: false\n  params:\n    shutdown_initiation_flags: [\"system/flags/goal_attained\", \"/vehicle_collided\"]\n    shutdown_completion_flags: [system/flags/data_logging_completed]"
+},
+
+{
     "location": "demos/system/demoA.html#",
     "page": "demoA",
     "title": "demoA",
