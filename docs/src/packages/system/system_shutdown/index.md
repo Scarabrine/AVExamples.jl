@@ -1,4 +1,4 @@
-# system/system_shutdown
+# system_shutdown
 
 ## System shutdown handler
 

@@ -13,7 +13,10 @@ makedocs(modules=[AVExamples],
              "packages/ros_chrono/index.md"
              "packages/mavs_ros_planner/index.md"
              "packages/contact_sensor/index.md"
-             "packages/system/system_shutdown/index.md"
+             "System"=>Any[
+                "packages/system/system_shutdown/index.md"
+                "packages/system/logging/index.md"
+             ]
                            ],
         "System Demos"=>Any[
               "demos/system/demoA.md"
