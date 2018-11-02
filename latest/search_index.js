@@ -977,6 +977,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "demos/ros_chrono/demo.html#To-test-(Currently-not-integrated-with-.travis)-1",
+    "page": "ros_chrono",
+    "title": "To test (Currently not integrated with .travis)",
+    "category": "section",
+    "text": "Following code will run the test on ros node and library to check if everything is correct. For library gtest, it\'s always true since specific test on each library hasn\'t been finished. Then for the ros node test, it will test demoA.launch as example.$ cd MAVs/ros\n$ catkin_make run_tests"
+},
+
+{
     "location": "issues/index.html#",
     "page": "Potential Issues",
     "title": "Potential Issues",
