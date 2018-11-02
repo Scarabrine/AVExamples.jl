@@ -977,6 +977,30 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "demos/ros_chrono/demo.html#To-run-velocity-test-1",
+    "page": "ros_chrono",
+    "title": "To run velocity test",
+    "category": "section",
+    "text": "Velocity test shows the ability of chorono to exchange information with ros. $ roslaunch ros_chrono demo_velocity_control.launch"
+},
+
+{
+    "location": "demos/ros_chrono/demo.html#Expected-Output-2",
+    "page": "ros_chrono",
+    "title": "Expected Output",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "demos/ros_chrono/demo.html#![link](../images/chrono_demo/demo_velocity_control.png)-1",
+    "page": "ros_chrono",
+    "title": "(Image: link)",
+    "category": "section",
+    "text": ""
+},
+
+{
     "location": "demos/ros_chrono/demo.html#To-test-(Currently-not-integrated-with-.travis)-1",
     "page": "ros_chrono",
     "title": "To test (Currently not integrated with .travis)",
