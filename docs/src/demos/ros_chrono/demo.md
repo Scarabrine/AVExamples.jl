@@ -20,10 +20,7 @@ $ rosparam set system/default/flags/initialized true
 ## To run velocity test
 Velocity test shows the ability of chorono to exchange information with ros. 
 ```
-$ cd roscore
-// Start a new terminal
-$ docker exec -it [container's name] /bin/bash
-$ rosrun ros_chrono velocity_control
+$ roslaunch ros_chrono demo_velocity_control.launch
 ```
 ## Expected Output
-![link](../image/chrono_demo/velocity_control_demo.png)
+![link](../images/chrono_demo/demo_velocity_control.png)
