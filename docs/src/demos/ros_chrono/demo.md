@@ -15,3 +15,15 @@ $ rosparam set system/default/flags/initialized true
 
 ## Expected Output
 ![link](../images/chrono_demo/expectedoutputchronodemo.png)
+
+
+## To run velocity test
+Velocity test shows the ability of chorono to exchange information with ros. 
+```
+$ cd roscore
+// Start a new terminal
+$ docker exec -it [container's name] /bin/bash
+$ rosrun ros_chrono velocity_control
+```
+## Expected Output
+![link](../image/chrono_demo/velocity_control_demo.png)
