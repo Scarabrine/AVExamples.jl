@@ -1009,6 +1009,22 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "demos/ros_chrono/demo.html#To-run-steering-tracking-test-1",
+    "page": "ros_chrono",
+    "title": "To run steering tracking test",
+    "category": "section",
+    "text": "steering tracking test shows the ability of chorono to exchange information with ros. $ cd $HOME/MAVs/ros\n$ roslaunch ros_chrono steering.launch"
+},
+
+{
+    "location": "demos/ros_chrono/demo.html#Expected-Output-3",
+    "page": "ros_chrono",
+    "title": "Expected Output",
+    "category": "section",
+    "text": "(Image: link) Under a constant speed, the vehicle will be controlled by the steering angle command to follow the steering angle trajectory."
+},
+
+{
     "location": "issues/index.html#",
     "page": "Potential Issues",
     "title": "Potential Issues",
