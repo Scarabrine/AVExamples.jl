@@ -31,3 +31,15 @@ Following code will run the test on ros node and library to check if everything 
 $ cd MAVs/ros
 $ catkin_make run_tests
 ```
+
+
+## To run steering tracking test
+steering tracking test shows the ability of chorono to exchange information with ros. 
+```
+$ cd $HOME/MAVs/ros
+$ roslaunch ros_chrono steering.launch
+```
+## Expected Output
+![link](../images/chrono_demo/demo_steering.png)
+Under a constant speed, the vehicle will be controlled by the steering angle command to follow the steering angle trajectory.
+
