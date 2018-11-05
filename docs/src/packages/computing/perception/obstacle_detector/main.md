@@ -61,3 +61,6 @@ Name | Description
 `/obstacle/vy`| global velocity in global y direction in (m/s)
 `/obstacle/x`| current global x (m) position of vehicle in (m)
 `/obstacle/y`| current global y (m) position of vehicle in (m)
+
+# demo
+N/A

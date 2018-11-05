@@ -1,4 +1,4 @@
-# mavs_ros_planner
+# mavs_ros_palnner
 
 This is a setup for [Navigation Stack](http://wiki.ros.org/navigation/Tutorials/Using%20rviz%20with%20the%20Navigation%20Stack#Overview) for the HMMWV model. This uses [move_base](http://wiki.ros.org/move_base) `ROS` package and given a `Goal pose`, it publishes a trajectory into `/cmd_vel`.
 

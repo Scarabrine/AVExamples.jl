@@ -23,9 +23,9 @@ Once, the trajectory is published on Rviz, ros parameter `/system/ros_base_plann
 
 #### Output windows
 
-![link](../images/demoD/chrono.png)
-![link](../images/demoD/gazebo.png)
-![link](../images/demoD/rviz.png)
+![link](demoD/chrono.png)
+![link](demoD/gazebo.png)
+![link](demoD/rviz.png)
 
 ### Note
 - Unless there is a path displayed on Rviz, Chrono will not start. Chrono waits for planner to get initialized, that means, the planner has successfully published a global plan at least once.

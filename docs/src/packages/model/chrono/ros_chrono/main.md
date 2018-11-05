@@ -1,24 +1,10 @@
 # ros_chrono
-A HMMWV vehicle model developed in Project `Chrono` is controlled using `ROS` parameters which transmit a desired path. The vehicle model
-is initialized with parameters from a config yaml file, including an initial desired xy path. The vehicle can track to specified path using a fixed target speed PID controller and a steering PID controller.
-The vehicle's states are published in a ROS msg and also saved as ROS parameters.
+A HMMWV vehicle model developed in Project `Chrono` is controlled using `ROS` parameters by 4 different modes, which are described below.
 
-## Flags and Settings
+## Mode 1: dynamic path following
+[insert description]
 
-### Settings
-Name | Description
---- | ---
-`system/chrono/flags/gui` | Disable/Enable Chrono GUI
-
-### Flags
-Name | Description
---- | ---
-`system/chrono/flags/initialized` | Chrono ROS node is initialized
-`system/chrono/flags/running` | Chrono simulation is running
-
-## Input
-
-### Trajectories
+### Input
 These x-y trajectories obtained from external planners are used to generate a path for the `Chrono` vehicle to follow. For the standalone path follower demo, `planner_namespace = default`.
 
 Name | Description
@@ -27,9 +13,7 @@ Name | Description
 `/state/chrono/planner_namespace/traj/x`| global x position trajectory (m)
 `/state/chrono/planner_namespace/traj/yVal`| global y position trajectory (m)
 
-## Output
-
-### Vehicle State
+### Output
 If an actual vehicle is used or an external model of the vehicle is used, `/nloptcontrol_planner/flags/3DOF_plant` should be set to `false`. And the following `rosparam` states (points) should be set:
 
 Name | Description
@@ -57,34 +41,56 @@ $ rostopic echo vehicleinfo
 ```
 This displays all states and inputs specified in the `veh_status.msg` file.
 
-## Change Vehicle Initial Conditions
+### Notes
 
-To change initial trajectory edit the parameters in the `hmmwv_chrono_params.yaml` config file.
+## Mode 2: dynamic steering trajectory following
+[insert description]
 
-```
-$ sudo gedit ros/src/system/config/s1.yaml
+### Input
 
-```
-To change target speed, edit:
+### Output
 
-```
-$ sudo gedit ros/src/models/chrono/ros_chrono/config/hmmwv_params.yaml
-```
-## Change Values of Updated Path
+### Notes
 
-For the path_follower demo, update the parameters of `/state/chrono/default/traj/yVal`, `/state/chrono/default/traj/x` in hmmwv_chrono_params.yaml. Change the system/planner parameter to chrono in chrono.yaml. In general, set system/planner to desired planner and update state/chrono/ <planner_name> /traj/x, vehicle/chrono/ <planner_name> /traj/yVal.
+## Mode 3: dynamic speed trajectory following
+[insert description]
+
+### Input
+
+### Output
+
+### Notes
+
+## Mode 4: dynamic speed and steering trajectory following
+[insert description]
+
+### Input
+
+### Output
+
+### Notes
 
 
-## Current Differences between 3DOF Vehicle model and HMMWV model:
-Name |3DOF | Chrono | Description
---- | --- | --- | ---
-`Izz` | 4,110.1 | 3,570.2 | Inertia about z axis
-`la` | 1.5775 | 1.871831 | Distance from COM to front axle
-`lb` | 1.7245 | 1.871831 | Distance from COM to rear axle
-`Tire Model` | PACEJKA | RIGID | Tire model used by vehicle
+## All  Modes
+The following settings, flags, topics, and parameters apply to all modes.
 
-## Parameter list
+## Settings
+Name | Description
+--- | ---
+`system/chrono/flags/gui` | Disable/Enable Chrono GUI
 
+## Flags
+Name | Description
+--- | ---
+`system/chrono/flags/initialized` | Chrono ROS node is initialized
+`system/chrono/flags/running` | Chrono simulation is running
+
+## Topics
+Name | Description
+--- | ---
+`/vehicleinfo` | Vehicle states, inputs, and time
+
+## Parameters
 The following parameters with SI units and angles in radians can be modified:
 
 Name | Description
@@ -130,7 +136,107 @@ Name | Description
 `/vehicle/chrono/vehicle_params/maxBrakeTorque` | Max brake torque
 
 
-## Topic list
-Name | Description
---- | ---
-`/vehicleinfo` | Vehicle states, inputs, and time
+## demoA | mode #1: dynamic path following
+[INSERT DESCRIPTION]
+
+To run:
+```
+
+```
+### Expected Output
+
+### Notes
+
+## MODE2: dynamic steering trajectory tracking
+[INSERT DESCRIPTION]
+
+To run:
+```
+
+```
+### Expected Output
+
+### Notes
+
+## MODE3: dynamic speed trajectory tracking
+[INSERT DESCRIPTION]
+
+To run:
+```
+
+```
+### Expected Output
+
+### Notes
+## MODE4: dynamic speed trajectory tracking
+[INSERT DESCRIPTION]
+
+To run:
+```
+
+```
+### Expected Output
+
+### Notes
+
+
+## OLD (below this)
+A vehicle model in `Chrono` that can be used through `ROS`.
+
+The vehicle model currently runs with rigid tire models, a rear-wheel driveline, double wishbone suspension (reduced so that the control arm positions are distance constraints), and rack and pinion steering.
+
+## To run
+```
+$ cd $HOME/MAVs/ros
+$ roslaunch ros_chrono demo.launch
+$ rosparam set system/default/flags/initialized true
+```
+
+## Expected Output
+![link](images/expectedoutputchronodemo.png)
+
+
+## To run velocity test
+Velocity test shows the ability of chorono to exchange information with ros.
+```
+$ roslaunch ros_chrono demo_velocity_control.launch
+```
+## Expected Output
+![link](images/demo_velocity_control.png)
+=======
+
+## To run steering tracking test
+steering tracking test shows the ability of chorono to exchange information with ros.
+```
+$ cd $HOME/MAVs/ros
+$ roslaunch ros_chrono steering.launch
+```
+## Expected Output
+![link](images/demo_steering.png)
+Under a constant speed, the vehicle will be controlled by the steering angle command to follow the steering angle trajectory.
+
+
+## Miscellaneous notes (may be outdated!)
+### Change Vehicle Initial Conditions
+To change initial trajectory edit the parameters in the `hmmwv_chrono_params.yaml` config file.
+
+```
+$ sudo gedit ros/src/system/config/s1.yaml
+
+```
+To change target speed, edit:
+
+```
+$ sudo gedit ros/src/models/chrono/ros_chrono/config/hmmwv_params.yaml
+```
+### Change Values of Updated Path
+For the path_follower demo, update the parameters of `/state/chrono/default/traj/yVal`, `/state/chrono/default/traj/x` in hmmwv_chrono_params.yaml. Change the system/planner parameter to chrono in chrono.yaml. In general, set system/planner to desired planner and update state/chrono/ <planner_name> /traj/x, vehicle/chrono/ <planner_name> /traj/yVal.
+
+
+### Current Differences between 3DOF Vehicle model and HMMWV model:
+Name |3DOF | Chrono | Description
+--- | --- | --- | ---
+`Izz` | 4,110.1 | 3,570.2 | Inertia about z axis
+`la` | 1.5775 | 1.871831 | Distance from COM to front axle
+`lb` | 1.7245 | 1.871831 | Distance from COM to rear axle
+`Tire Model` | PACEJKA | RIGID | Tire model used by vehicle

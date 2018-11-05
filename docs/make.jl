@@ -1,41 +1,54 @@
 using Documenter, AVExamples
 makedocs(modules=[AVExamples],
-        doctest=false, clean=true,
-        format =:html,
-        authors="Huckleberry Febbo",
-        sitename="MAVs",
-        pages = Any[
-        "Home" => "index.md",
-        "Packages"=>Any[
-             "packages/nloptcontrol_planner/index.md"
-             "packages/obstacle_detector/index.md"
-             "packages/vehicle_description/index.md"
-             "packages/ros_chrono/index.md"
-             "packages/mavs_ros_planner/index.md"
-             "packages/contact_sensor/index.md"
-             "System"=>Any[
-                "packages/system/system_shutdown/index.md"
-                "packages/system/logging/index.md"
-             ]
-                           ],
-        "System Demos"=>Any[
-              "demos/system/demoA.md"
-              "demos/system/demoB.md"
-              "demos/system/demoC.md"
-              "demos/system/demoD.md"
-              "demos/system/demoE.md"
-              "demos/system/demoF.md"
-                           ],
-        "Package Demos"=>Any[
-             "demos/vehicle_description/demo.md"
-             "demos/nloptcontrol_planner/demo.md"
-             "demos/ros_chrono/demo.md"
-                            ],
-         "Miscellaneous"=>Any[
-               "issues/index.md"
-                             ]
-               ]
-               )
+doctest=false, clean=true,
+format =:html,
+assets = ["assets/style.css"],
+authors="Huckleberry Febbo",
+sitename="MAVs",
+pages = [
+    "Home" => "intro.md",
+    "Usage" => [
+        "Basic usage" => "tutorials/basic.md",
+        "Developing MAVs" => "tutorials/developer.md",
+    ],
+    "Sensing" => [
+        "vehicle_description" => "packages/model/gazebo/vehicle_description/main.md",
+        "contact_sensor" => "packages/model/gazebo/contact_sensor/main.md",
+    ],
+    "Detection" => [
+        "obstacle_detector" => "packages/computing/perception/obstacle_detector/main.md",
+    ],
+    "Vehicle model" => [
+        "ros_chrono" => "packages/model/chrono/ros_chrono/main.md",
+    ],
+    "Planning" => [
+        "nloptcontrol_planner" => "packages/computing/planning/nloptcontrol_planner/main.md",
+        "mavs_ros_planner" => "packages/computing/planning/mavs_ros_planner/main.md",
+    ],
+    "Miscellaneous" => [
+        "system_shutdown" => "packages/system/system_shutdown.md",
+        "data_logging" => "packages/system/data_logging.md",
+        "chrono_position_broadcaster" => "packages/model/chrono/chrono_position_broadcaster/main.md",
+        "ros_chrono_msgs" => "packages/model/chrono/ros_chrono_msgs/main.md",
+    ],
+    "System demos" => [
+        "demoA" => "packages/system/demos/demoA.md",
+        "demoB" => "packages/system/demos/demoB.md",
+        "demoC" => "packages/system/demos/demoC.md",
+        "demoD" => "packages/system/demos/demoD.md",
+        "demoE" => "packages/system/demos/demoE.md",
+        "demoF" => "packages/system/demos/demoF.md",
+        "demoG" => "packages/system/demos/demoG.md",
+    ],
+    "Docker" => [
+        "Workflow" => "docker/workflow.md",
+        "Notes" => "docker/notes.md",
+    ],
+    "Testing"  => "testing/main.md",
+    "Troubleshooting"  => "issues/main.md",
+]
+)
+
 deploydocs(
     deps=Deps.pip("mkdocs","python-markdown-math"),
     repo="github.com/JuliaMPC/AVExamples.jl.git",
