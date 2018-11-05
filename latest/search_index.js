@@ -1,7 +1,7 @@
 var documenterSearchIndex = {"docs": [
 
 {
-    "location": "intro.html#",
+    "location": "index.html#",
     "page": "Home",
     "title": "Home",
     "category": "page",
@@ -9,7 +9,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "intro.html#MAVs-Documentation-1",
+    "location": "index.html#MAVs-Documentation-1",
     "page": "Home",
     "title": "MAVs Documentation",
     "category": "section",
@@ -17,7 +17,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "intro.html#Features-1",
+    "location": "index.html#Features-1",
     "page": "Home",
     "title": "Features",
     "category": "section",
@@ -25,7 +25,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "intro.html#Requirements-1",
+    "location": "index.html#Requirements-1",
     "page": "Home",
     "title": "Requirements",
     "category": "section",
@@ -33,7 +33,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "intro.html#Installation-1",
+    "location": "index.html#Installation-1",
     "page": "Home",
     "title": "Installation",
     "category": "section",
@@ -41,7 +41,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "intro.html#Citation-1",
+    "location": "index.html#Citation-1",
     "page": "Home",
     "title": "Citation",
     "category": "section",
