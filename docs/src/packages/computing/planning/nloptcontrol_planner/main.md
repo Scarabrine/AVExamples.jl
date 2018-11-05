@@ -36,7 +36,7 @@ Name | Description
 ## Outputs
 
 ### Trajectories
-The purpose of this node is to publish reference state trajectories (vectors) as
+The purpose of this node is to publish reference state trajectories (vectors) in the `Control.msg` as
 
 Name | Description
 --- | ---
@@ -46,6 +46,19 @@ Name | Description
 `/nloptcontrol_planner/traj/psi`| global heading angle trajectory (rad)
 `/nloptcontrol_planner/traj/sa`| steering angle trajectory at the tire (rad)
 `/nloptcontrol_planner/traj/vx`| velocity trajectory in the x direction (vehicle frame) (m/s)
+
+### Optimization and MPC message
+The error between the predicted initial state and the actual initial state is provided along with some additional optimization information in the `Optimization.msg` as
+
+Type | Name | Description
+-- | --- | ---
+`float64` | `texP`            |           predicted execution horizon (s)
+`float64` | `texA`             |          actual execution horizon (s)
+`float64`| `tSolve`             |        optimization time (s)
+`string`| `status`               |       optimization status
+`float64[]` |`X0p`                |      predicted initial state vector
+`float64[]`| `X0a`                 |     actual initial state vector
+`float64[]`| `X0e`                  |    error in prediction of initial state vector
 
 
 ## Flags and Settings

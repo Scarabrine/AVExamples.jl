@@ -7,7 +7,6 @@ Container: A runtime instance of an image. This is a image becomes in memory whe
 Dockerfile: A simple text-file that contains a list of commands that the Docker client calls while creating an image. It's a simple way to automate the image creation process.
 In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally.
 
-
 ## Dockerfile Commands
 FROM		Load from a base image
 CMD		Cmd takes the following format CMD [“excutable”, ”params1”, ”params2”]
@@ -90,4 +89,21 @@ see the [docker tutorial on containers](https://docs.docker.com/get-started/part
 It would be interesting to try this with the higher-level image, but this is *not yet tested*.
 ```
 docker run -p 4000:80 avpg/cain:base_cudagl
+```
+
+## Running out of space?
+Check your current images:
+```
+docker image ls
+```
+
+Check your current containers:
+```
+docker image ls
+```
+
+Do some trimming
+```
+docker image prune
+docker container prune
 ```
