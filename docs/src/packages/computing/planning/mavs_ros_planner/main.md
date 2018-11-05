@@ -4,13 +4,6 @@ This is a setup for [Navigation Stack](http://wiki.ros.org/navigation/Tutorials/
 
 The setup uses `navfn/NavfnROS` as `base_global_planner` and `base_local_planner/TrajectoryPlannerROS` as `base_local_planner`. Namespace for this planner is `ros_base_planner`
 
-## Flags and Settings
-
-Name | Description
---- | ---
-`/system/ros_base_planner/initialized` | indicates if the planner has successfully published a global plan
-`/system/ros_base_planner/goal_known` | indicates wether to use the goal provided in case file or from Rviz
-
 ## Inputs
 Following are the argument required by package's main.launch file of `mavs_ros_palnner` package
 
@@ -31,3 +24,10 @@ Name | Description
 --- | ---
 `vehicle/chrono/ros_base_planner/traj/x` | list of 'x' part of global coordinates for the created plan
 `vehicle/chrono/ros_base_planner/traj/y` | list of 'y' part of global coordinates for the created plan
+
+## Flags and Settings
+
+Name | Description
+--- | ---
+`/system/ros_base_planner/initialized` | indicates if the planner has successfully published a global plan
+`/system/ros_base_planner/goal_known` | indicates wether to use the goal provided in case file or from Rviz

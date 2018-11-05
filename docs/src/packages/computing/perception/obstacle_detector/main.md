@@ -4,9 +4,23 @@ We made some modifications so that the package can detect and track obstacles fr
 
 This obstacle detection algorithms can predict the position `(x,y)`, velocity `(x,y)`, and size (assuming circular obstacles).
 
+## Input
+rostopic | rosmsg
+--- | ---
+/lidar_points| PointCloud2
 
-## Flags and Settings
-### Settings
+## Output
+Currently the obstacles are assumed to be represented by circles and their data is to be published to the vectors in the following `rosparam`
+
+Name | Description
+--- | ---
+`/obstacle/radius` | radius of obstacle in (m)
+`/obstacle/vx` | global velocity in global x direction in (m/s)
+`/obstacle/vy`| global velocity in global y direction in (m/s)
+`/obstacle/x`| current global x (m) position of vehicle in (m)
+`/obstacle/y`| current global y (m) position of vehicle in (m)
+
+## Settings
 Name | Description
 --- | ---
 `/obstacle_detector/obstacle_extractor/active` | active/sleep mode
@@ -40,27 +54,11 @@ Name | Description
 `/voxel_grid/filter_limit_negative` | Inverts the meaning of the filter interval.
 `/voxel_grid/leaf_size` | The extent of a leaf, respectively the voxel size of the result image or the size of the cells which shall accumulate points.
 
-### Flags
+## Flags
 Name | Description
 --- | ---
 `/system/obstacle_detector/flags/running` | indicates whether the obstacle detector is running
 `/system/obstacle_detector/flags/initilized` | indicates whether the obstacle detector is initialized
-
-## Input
-rostopic | rosmsg
---- | ---
-/lidar_points| PointCloud2
-
-## Output
-Currently the obstacles are assumed to be represented by circles and their data is to be published to the vectors in the following `rosparam`
-
-Name | Description
---- | ---
-`/obstacle/radius` | radius of obstacle in (m)
-`/obstacle/vx` | global velocity in global x direction in (m/s)
-`/obstacle/vy`| global velocity in global y direction in (m/s)
-`/obstacle/x`| current global x (m) position of vehicle in (m)
-`/obstacle/y`| current global y (m) position of vehicle in (m)
 
 # demo
 N/A

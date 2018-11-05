@@ -35,3 +35,7 @@ The demo's can be run and results are the produced and stored even after the MAV
 
 ### github note
 A ``.gitignore`` file is added to make sure that when these results are produced they are not submitted to github (assuming a pull request is made afterwards).
+
+
+## Parameters
+Parameters are broken into two categories; `Inputs` and `Outputs`. In the demo, the inputs are also generated, but flags can be set to let the node know that the user will be setting these `rosparams` externally.
