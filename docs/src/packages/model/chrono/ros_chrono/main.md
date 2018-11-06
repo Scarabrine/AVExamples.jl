@@ -139,7 +139,7 @@ This displays all states and inputs specified in the `veh_status.msg` file.
 
 ### Notes
 Below is the expected output for velocity controller:
-![link](../images/velocity_control1.png)
+![link](images/velocity_control1.png)
 
 ## Mode 4: dynamic speed and steering trajectory following
 In Mode 4, this node `steering_controller` can simulate the vehicle’s motion at the control of varying velocity and steering input. In this test, both steering and velocity command are hardcoded.
@@ -187,7 +187,7 @@ This displays all states and inputs specified in the `veh_status.msg` file.
 
 ### Notes
 The node rqt_graph for `steering_controller` is shown below:
-![link](../images/nodegraph.png)
+![link](images/nodegraph.png)
 
 
 ## All  Modes
