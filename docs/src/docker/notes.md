@@ -1,32 +1,37 @@
 # Docker notes
 
 ## Basic Concepts
-An image is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
-Docker Hub: A registry of Docker images. You can think of the registry as a directory of all available Docker images. Since the image doesn't exist locally, the client will first fetch the image from the registry and then run the image.
-Container: A runtime instance of an image. This is a image becomes in memory when actually executed.
-Dockerfile: A simple text-file that contains a list of commands that the Docker client calls while creating an image. It's a simple way to automate the image creation process.
-In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally.
+An image is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.  
+Docker Hub: A registry of Docker images. You can think of the registry as a directory of all available Docker images. Since the image doesn't exist locally, the client will first fetch the image from the registry and then run the image.  
+Container: A runtime instance of an image. This is a image becomes in memory when actually executed.  
+Dockerfile: A simple text-file that contains a list of commands that the Docker client calls while creating an image. It's a simple way to automate the image creation process.  
+In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally.  
 
 ## Dockerfile Commands
-FROM		Load from a base image
-CMD		Cmd takes the following format CMD [“excutable”, ”params1”, ”params2”]
-RUN		Run is used to execute any commands.
-COPY		Copy the folder/ files from the local host source to the destination in the container.
-ENV		Set the environment variables.
-USER	Set the (UID) username which is to run the container based on the image being built.
-VOLUME	Enable access from your container to a directory on the host machine.
+Command | Description
+--- | ---
+FROM | Load from a base image
+CMD | Cmd takes the following format CMD [“excutable”, ”params1”, ”params2”]
+RUN | Run is used to execute any commands.
+COPY | Copy the folder/ files from the local host source to the destination in the container.
+ENV	| Set the environment variables.
+USER | Set the (UID) username which is to run the container based on the image being built.
+VOLUME | Enable access from your container to a directory on the host machine.
 
 ## Docker Commands
-docker run <image>	run a docker container based on the image
-docker ps 			show all containers that are currently running
-docker ps -a 			show a list of all containers that we ran
-docker history <image>		view all the layers that make up the image once the image is built
-docker exec -it <container> /bin/bash	launch the docker from other terminals
-docker commit <container> <repository[:TAG]>	create a new image from a container’s changes
-docker kill <container> 	kill one or more running containers
-docker rm <container> 	remove existing container
-docker image ls		list image built on the machine
-docker image rm <container>	remove image
+Command | Description
+--- | ---
+docker run <image> | run a docker container based on the image
+docker ps | show all containers that are currently running
+docker ps -a | show a list of all containers that we ran
+docker history <image> | view all the layers that make up the image once the image is built
+docker exec -it <container> /bin/bash | launch the docker from other terminals
+docker commit <container> <repository[:TAG]> | create a new image from a container’s changes
+docker kill <container> | kill one or more running containers
+docker rm <container> | remove existing container
+docker image ls | list image built on the machine
+docker image rm <container> | remove image
+
 nvidia-docker build -t <container> -f <Dockerfile>
 nvidia-docker run
 -it
@@ -36,29 +41,48 @@ nvidia-docker run
 -u		user or UID (i.e. mavs)
 --privileged	give extended privileges to this container
 
-## Docker examples
-Save changes made in docker container:
-docker ps -l	find the container ID
-docker commit <container_id> [repository[:tag]]   
-Change the docker name tag in ./run.sh
+## Docker examples:
 
-Upload base image to Docker Hub:
-docker tag <container> [DockerUserName/Repository[:tag]]
-docker push [DockerUserName/Repository[:tag]]
+### Save changes made in docker container:
+1. Find the container ID  
+```
+$docker ps -l
+```
+2. Commit the change
+```
+$docker commit <container_id> [repository[:tag]]`
+```
+1. Change the docker name tag in ./run.sh  
 
-Run open up new terminals to access Container (example):
-Look at the current containers available with
-$ docker container ls
+### Upload base image to Docker Hub:
+1. Tag the image
+```
+$docker tag <container> [DockerUserName/Repository[:tag]]
+```
+2. Push the image to Docker Hub repository
+```
+$docker push [DockerUserName/Repository[:tag]]
+```
+
+### Open up new terminals to access Container (example):
+1. Look at the current containers available with 
+```
+$docker container ls
+```
+```
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 ce4096e14bef        mavs                "/ros_entrypoint.sh …"   34 minutes ago      Up 34 minutes                           vigilant_johnson
-Open terminal
+```
+2. Open a new terminal
+```
 $docker exec -it vigilant_johnson /bin/bash
+```
 Note: you can use “tab” key to auto-complete the <container_name>
 
 
 ## Docker hub
 
-## How to update base image on docker hub
+### How to update base image on docker hub
 1. Run
 ```
 $sh build.sh
@@ -71,7 +95,7 @@ $docker login
 ```
 $docker image ls
 ```
-Currently this should be avpg_base, where the image name is specified in the build.sh script
+Currently this should be avpg_base, where the image name is specified in the `build.sh` script
 
 4. tag the image
 ```
