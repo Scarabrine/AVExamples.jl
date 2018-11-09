@@ -11,6 +11,7 @@ roslaunch system demoI.launch
 ```
 
 ## Expected Output
-SSS
+![link](/demoI/demoI_2.png)
+![link](/demoI/demoI.png)
 
 Frame `map` is not published until `nloptcontrol_planner` is initialized.
