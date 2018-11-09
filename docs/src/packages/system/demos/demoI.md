@@ -1,4 +1,4 @@
-# demoG
+# demoI
 
 ## `Obstacle_detector` is used to detect the obstacle information and pass it to `nloptcontrol_planner`. Then the generated trajectory will be passed to chrono vehicle model, and chrono vehicle model will follow this trajectory. 
 
